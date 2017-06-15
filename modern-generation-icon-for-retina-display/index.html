@@ -14,7 +14,7 @@
 	<form action="#" class="c-form">
 		<h1>Demo modern generation image <br>for retina support</h1>
 		<p>More info: <a href="https://github.com/retyui/demo-modern-images-usage-css">demo-repo</a></p>
-		<p>window.devicePixelRatio = <span class="js-dpr"></span></p>
+		<p>window.devicePixelRatio = <span class="js-dpr"></span> <span class="webp-check">Webp support:</span></p>
 		<input placeholder=" " type="text" class="c-input" required value="1">
 		<input placeholder=" " type="number" class="c-input" required value=" ">
 	</form>
@@ -22,5 +22,16 @@
 		'use sctict';
 		document.querySelector('.js-dpr').textContent = window.devicePixelRatio;
 	</script>
+	<style>
+		html:not(.webp) .webp-check::after{
+			content: ' false';
+			color: red;
+		}
+
+		html.webp .webp-check::after{
+			content: ' true';
+			color: green;
+		}
+	</style>
 </body>
 </html>
