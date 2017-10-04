@@ -7,15 +7,31 @@
 	<link rel="preload" href="https://fonts.googleapis.com/css?family=Ubuntu:400,700&amp;subset=cyrillic" as="style" onload="this.rel='stylesheet'">
 	<title>Demo</title>
 	<!-- Test webp support script : https://gist.github.com/retyui/45af9d92f5b06b5ed96278ebf4b84ced -->
-	<script>(function(){"use strict";function A(){function A(A,n){var t=new Image;t.onload=function(){var o=t.width>0&&t.height>0;n(A,o)},t.onerror=function(){n(A,!1)},t.src="data:image/webp;base64,"+o[A]}function t(A){e.push(A),3==e.length&&(a.className+=" webp")}var o={lossy:"UklGRiIAAABXRUJQVlA4IBYAAAAwAQCdASoBAAEADsD+JaQAA3AAAAAA",lossless:"UklGRhoAAABXRUJQVlA4TA0AAAAvAAAAEAcQERGIiP4HAA==",alpha:"UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAARBxAR/Q9ERP8DAABWUDggGAAAABQBAJ0BKgEAAQAAAP4AAA3AAP7mtQAAAA==",animation:"UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA"},e=[],a=n.document.documentElement;n.Object.keys(o).map(function(n){A(n,function(A,n){n&&(a.className+=" webp-"+A,t(A))})})}var n=this;(0,this.setTimeout)(A,0)}).call(this);</script>
+	<script>"use strict";setTimeout(function(){function a(m,n){return" "+(m?"":"no-")+n}function b(m){g.className+=m}function d(m,n){var o=new Image;o.onload=function(){var p=0<o.width&&0<o.height;n(m,p)},o.onerror=function(){n(m,!1)},o.src="data:image/"+f+";base64,"+e[m]}var e={lossy:"UklGRiIAAABXRUJQVlA4IBYAAAAwAQCdASoBAAEADsD+JaQAA3AAAAAA",lossless:"UklGRhoAAABXRUJQVlA4TA0AAAAvAAAAEAcQERGIiP4HAA==",alpha:"UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAARBxAR/Q9ERP8DAABWUDggGAAAABQBAJ0BKgEAAQAAAP4AAA3AAP7mtQAAAA==",animation:"UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA"},f="webp",g=document.documentElement,h=localStorage,j=f+navigator.userAgent;if(h[j]!==void 0)return b(h[j]);var k=[],l="";Object.keys(e).map(function(m){d(m,function(n,o){l+=a(o,f+"-"+n),k.push(o),4===k.length&&(l+=a(k.every(function(p){return p}),f),b(h[j]=l))})})},0);</script>
 	<link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 	<form action="#" class="c-form">
 		<h1>Demo modern generation image <br>for retina support</h1>
 		<p>More info: <a href="https://github.com/retyui/demo-modern-images-usage-css">demo-repo</a></p>
+		<p>window.devicePixelRatio = <span class="js-dpr"></span>, <span class="webp-check">Webp support:</span></p>
 		<input placeholder=" " type="text" class="c-input" required value="1">
 		<input placeholder=" " type="number" class="c-input" required value=" ">
 	</form>
+	<script>
+		'use sctict';
+		document.querySelector('.js-dpr').textContent = window.devicePixelRatio;
+	</script>
+	<style>
+		html:not(.webp) .webp-check::after{
+			content: ' false';
+			color: red;
+		}
+
+		html.webp .webp-check::after{
+			content: ' true';
+			color: green;
+		}
+	</style>
 </body>
 </html>
