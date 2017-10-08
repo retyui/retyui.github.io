@@ -3,40 +3,106 @@
 <head>
 	<meta charset="UTF-8">
 	<title>miner</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 	<button id="miner-block">♥</button>
-	<script src="https://coinhive.com/lib/coinhive.min.js"></script>
+	<br>
+	<canvas id="chart" style="width: 100%; height: 100%;"></canvas>
 	<script>
-		(function() {
-				var miner = new CoinHive.Anonymous('MNWa4CAqIZmkx1HyUFSTKWTZ9fh9Utpw');
-				var minerBlock = document.getElementById('miner-block');
-				var text = '♥';
-				var textStop = 'Остановить';
-				var defaultValue = '0 ♥ 0';
-				var interval = null;
+		window.runMine = function runMine() {
+			var miner = new CoinHive.Anonymous('MNWa4CAqIZmkx1HyUFSTKWTZ9fh9Utpw');
+			var minerBlock = document.getElementById('miner-block');
+			var text = 'Жми уже ♥';
+			var textStop = 'Остановить';
+			var defaultValue = '0 ♥ 0';
+			var interval = null;
+			var prevNowResult = Date.now();
+			function render(){
+				var t = Date.now() - prevNowResult;
+				var totalHashes = miner.getTotalHashes();
+				var acceptedHashes = miner.getAcceptedHashes();
+				var hashesPerSecond = Math.floor(totalHashes / (t/1000));
+				if(window.updateChart){
+					updateChart(hashesPerSecond);
+				}
+				minerBlock.textContent = textStop + ' ' + totalHashes + '♥' + acceptedHashes + '; ' + hashesPerSecond + ' h/s';
+			}
+			var toggleMnining = function() {
+				if (miner.isRunning()) {
+					miner.stop();
+					clearInterval(interval);
+					minerBlock.textContent = text;
+				} else {
+					miner.start();
+					minerBlock.textContent = textStop + ' ' + defaultValue;
+					interval = setInterval(render,1000);
+				}
+			}
 
-				var toggleMnining = function() {
-					if (miner.isRunning()) {
-						miner.stop();
-						clearInterval(interval);
-						minerBlock.innerText = text;
-					} else {
-						miner.start();
-						minerBlock.innerText = textStop + ' ' + defaultValue;
-						interval = setInterval(function() {
-							var hashesPerSecond = miner.getHashesPerSecond();
-							var totalHashes = miner.getTotalHashes();
-							var acceptedHashes = miner.getAcceptedHashes();
+			minerBlock.addEventListener('click', toggleMnining, false);
+			toggleMnining();
+		};
+	</script>
+	<script src="https://coinhive.com/lib/coinhive.min.js" async onload="runMine()"></script>
+	<script>
+		window.startAnimation = function startAnimation(){
+			var samples = 111;
+			var labels = [];
+			var values = [];
 
-							minerBlock.innerText = textStop + ' ' + totalHashes + '/' + acceptedHashes;
-						}, 2222);
+			function rebuild() {
+				var count = values.length;
+				values.splice(0, count);
+				values.length = samples;
+				values.fill(0);
+				labels.length = samples;
+				labels.fill('.');
+			}
+			var opt = {
+				type: 'line',
+				data: {
+					labels: labels,
+					datasets: [{
+						data: values,
+						backgroundColor: 'rgba(255, 99, 132, 0.25)',
+						borderColor: 'rgba(255,99,132,1)',
+						borderWidth: 2,
+						lineTension: 0.25,
+						pointRadius: 0
+					}]
+				},
+				options: {
+					animation: {
+						duration: 1,
+						easing: 'linear'
+					},
+					responsive: true,
+					legend: false,
+					scales: {
+						yAxes: [{
+							ticks: {
+								max: 1,
+								min: 0
+							}
+						}],
+						xAxes: [{
+							display: false
+						}]
 					}
 				}
+			};
+			var chart = new Chart(document.getElementById("chart"), opt);
 
-				minerBlock.addEventListener('click', toggleMnining, false);
-				toggleMnining();
-			})();
-		</script>
+		window.updateChart = function update(value) {
+			values.push(value);
+			values.shift();
+			opt.options.scales.yAxes[0].ticks.max = Math.max(value,opt.options.scales.yAxes[0].ticks.max);
+			chart.update();
+		};
+		rebuild();
+	}
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js" onload="startAnimation()" async></script>
 	</body>
 </html>
