@@ -30,7 +30,7 @@ export class BlockViewport extends Rect {
     }
 
     isBlockOutsideViewport(x, y) {
-        return this.isBlockOutsideViewportX(x || this.dimension.left, 0) || this.isBlockOutsideViewportY(y || this.dimension.top, 0);
+        return this.isBlockOutsideViewportX(x || this.dimension.left, 0.01) || this.isBlockOutsideViewportY(y || this.dimension.top, 0.01);
     }
 
     isBlockOutsideViewportX(x, dx) {
@@ -105,7 +105,7 @@ export class RedBlock extends BlockViewport {
 
         this.dimension.top = left - this.dimension.width / 2;
         this.dimension.left = top - this.dimension.height / 2;
-        if (this.isBlockOutsideViewport()) {
+        if (this.isBlockOutsideViewport(this.dimension.top, this.dimension.left)) {
             this.stopGame();
         }
         return this.draw();

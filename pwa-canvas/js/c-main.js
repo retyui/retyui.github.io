@@ -79,6 +79,8 @@ import {randNotSmall, getWindowSize, __, sizeFactor, getVMIN, isNaN} from './uti
     let redBlockPosXY = [halfWidth, halfHeight];
     if ('ontouchstart' in document.documentElement) {
         canvasElement.addEventListener("touchmove", e => {
+            e.preventDefault();
+
             const touch = e.touches[0];
             const rect = canvasElement.getBoundingClientRect();
             redBlockPosXY = [
@@ -133,8 +135,10 @@ import {randNotSmall, getWindowSize, __, sizeFactor, getVMIN, isNaN} from './uti
 
 
     canvasElement.onclick = () => {
-        timeStart = Date.now();
-        render(); // start Game
+        if (reqID === true) {
+            timeStart = Date.now();
+            render(); // start Game
+        }
     };
 
 
@@ -161,7 +165,7 @@ import {randNotSmall, getWindowSize, __, sizeFactor, getVMIN, isNaN} from './uti
 (() => {
     //If serviceWorker supports, then register it.
     if ("serviceWorker" in navigator) {
-        navigator.serviceWorker.register('/pwa-canvas/sw.js', {scope: "./"}) //setting scope of sw
+        navigator.serviceWorker.register('/pwa-canvas/sw.js?v=2', {scope: "./"}) //setting scope of sw
             .then(registration => {
                 console.info('Service worker is registered!');
                 checkForPageUpdate(registration); // To check if new content is updated or not
