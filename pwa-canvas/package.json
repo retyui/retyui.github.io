@@ -1,0 +1,26 @@
+{
+  "scripts": {
+    "build": "webpack ./js/c-main.js js/build.min.js --module-bind \"js=babel-loader\" -p",
+    "dev": "browser-sync start --server --files ./js/*"
+  },
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "loose": true
+        }
+      ]
+    ]
+  },
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "webpack": "^3.8.1"
+  },
+  "name": "fighter-pilot-challenge-pwa",
+  "version": "0.0.1",
+  "author": "retyui",
+  "license": "MIT"
+}

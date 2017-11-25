@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Fighter pilot challenge PWA</title>
+    <meta http-equiv=X-UA-Compatible content="IE=edge">
+    <meta name=viewport content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#ff0000">
+    <meta name="msapplication-TileColor" content="#ff0000">
+    <meta name="msapplication-TileImage" content="/pwa-canvas/images/icons/mstile-150x150.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Fighter pilot challenge PWA">
+    <meta name="application-name" content="Fighter pilot challenge PWA">
+    <link rel="apple-touch-icon" href="/pwa-canvas/images/icons/apple-touch-icon.png">
+    <link rel="mask-icon" href="/pwa-canvas/images/icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="icon" type="image/png" href="/pwa-canvas/images/icons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/pwa-canvas/images/icons/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/pwa-canvas/manifest.json">
+    <style>
+        *{-webkit-box-sizing: border-box;box-sizing: border-box;}
+        html,body{margin: 0;height: 100%;width: 100%;font:400 16px/1.5 sans-serif;}
+        canvas{background: #000;}
+        body{display: -webkit-box;display: -ms-flexbox;display: flex;-webkit-box-orient: horizontal;-webkit-box-direction: reverse;-ms-flex-direction: row-reverse;flex-direction: row-reverse;-ms-flex-wrap: wrap;flex-wrap: wrap;-ms-flex-pack: distribute;justify-content: space-around;-webkit-box-align: center;-ms-flex-align: center;align-items: center;}
+        .info{padding: 2em;}
+    </style>
+  </head>
+  <body>
+      <div class="info">
+          <h1>Fighter pilot challenge PWA</h1>
+          <p>Click and hold the red square.</p>
+          <p>Now, move it so that you neither touch the walls nor get hit by any of the blue blocks</p>
+          <p>If you make it to 18 seconds, you are doing brilliantly!</p>
+      </div>
+      <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+      <script src="/pwa-canvas/js/c-main.js" type="module"></script>
+      <script src="/pwa-canvas/js/build.min.js" nomodule></script>
+  </body>
+</html>

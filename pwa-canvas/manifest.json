@@ -1,0 +1,27 @@
+{
+  "name": "Fighter pilot challenge PWA",
+  "short_name": "PWA",
+  "description": "The object of the game is to move the red block around without getting hit by the blue blocks or touching the black walls. It's been said that the US Air Force uses tests like this to rate their fighter pilots. If you can survive longer than 22 seconds you are phenomenal.",
+  "start_url": "/pwa-canvas/index.html",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#ff0000",
+  "theme_color": "#ff0000",
+  "icons": [
+    {
+      "src": "/pwa-canvas/images/icons/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/pwa-canvas/images/icons/android-chrome-256x256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    }
+  ],
+  "author": {
+    "name": "Narbutovich David",
+    "website": "https://retyui.github.io/",
+    "github": "https://github.com/retyui/"
+  }
+}
