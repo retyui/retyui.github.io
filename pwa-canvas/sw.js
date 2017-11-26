@@ -1,7 +1,7 @@
 //Cache polyfil to support cacheAPI in all browsers
 importScripts('/pwa-canvas/cache-polyfill.js');
 
-var cacheName = 'cache-v2';
+var cacheName = 'cache-v3';
 
 //Files to save in cache
 var files = [

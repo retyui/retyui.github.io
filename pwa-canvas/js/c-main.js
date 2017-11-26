@@ -10,6 +10,7 @@ import {randNotSmall, getWindowSize, __, sizeFactor, getVMIN, isNaN} from './uti
 
 
     const canvasElement = w.document.createElement('canvas');
+    canvasElement.setAttribute('tabindex', 0);
     w.document.body.appendChild(canvasElement);
     canvasElement.width = VMIN;
     canvasElement.height = VMIN;
