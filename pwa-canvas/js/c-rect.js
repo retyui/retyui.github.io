@@ -105,9 +105,10 @@ export class RedBlock extends BlockViewport {
 
         this.dimension.top = left - this.dimension.width / 2;
         this.dimension.left = top - this.dimension.height / 2;
+        this.draw();
         if (this.isBlockOutsideViewport(this.dimension.top, this.dimension.left)) {
             this.stopGame();
         }
-        return this.draw();
+        return this;
     }
 }
