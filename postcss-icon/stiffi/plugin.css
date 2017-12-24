@@ -1,0 +1,157 @@
+.icon-backward::before,.icon-backward::after { position: absolute; content: ""; display: block; }
+.icon-backward::before,.icon-backward::after { border-top: 8px solid transparent; border-bottom: 8px solid transparent; top: -1px; left: -1px; }
+.icon-backward::before,.icon-backward::after { border-right: 8px solid; }
+.icon-backward::after { left: 7px; }
+.icon-backward{ float: left; width: 14px; height: 14px; position: relative; display: block; }
+.icon-bookmark::before,.icon-bookmark::after { position: absolute; content: ""; display: block; }
+.icon-bookmark::before { width: 0px; height: 5px; border-width: 5px 5px 6px; border-style: solid; border-top-color: initial; border-right-color: initial; border-left-color: initial; border-image: initial; border-bottom-color: transparent; left: 2px; }
+.icon-bookmark{ float: left; width: 14px; height: 14px; position: relative; display: block; }
+.icon-comment::before,.icon-comment::after { position: absolute; content: ""; display: block; }
+.icon-comment::after { transform: rotate(45deg); }
+.icon-comment::before { height: 10px; width: 16px; border-radius: 16px 10px; box-shadow: 0px 0px 0px 16px inset; }
+.icon-comment::after { border-top: 16px solid; border-left: 3px solid transparent; border-right: 4px solid transparent; top: 2px; left: 4px; }
+.icon-comment{ float: left; width: 14px; height: 14px; position: relative; display: block; left: -1px; width: 15px; }
+.icon-down::before,.icon-down::after { position: absolute; content: ""; display: block; }
+.icon-down::before { transform: rotate(-45deg); }
+.icon-down::after { transform: rotate(45deg); }
+.icon-down::before,.icon-down::after { width: 3px; height: 10px; box-shadow: 0px 0px 0px 16px inset; top: -1px; left: 5px; }
+.icon-down::before { left: 3px; }
+.icon-down::after { left: 8px; }
+.icon-down::before,.icon-down::after { top: 2px; }
+.icon-down{ float: left; width: 14px; height: 14px; position: relative; display: block; }
+.icon-eject::before,.icon-eject::after { position: absolute; content: ""; display: block; }
+.icon-eject::before { width: 0px; border-bottom: 8px solid; border-right: 8px solid transparent; border-left: 8px solid transparent; left: -1px; }
+.icon-eject::after { height: 4px; width: 16px; box-shadow: 0px 0px 0px 16px inset; top: 10px; left: -1px; }
+.icon-eject{ float: left; width: 14px; height: 14px; position: relative; display: block; }
+.icon-file::before,.icon-file::after { position: absolute; content: ""; display: block; }
+.icon-file::before { transform: rotate(-45deg); }
+.icon-file::before { border-top: 5px solid; border-left: 5px solid transparent; border-right: 5px solid transparent; top: 3px; left: 1px; }
+.icon-file::after { width: 11px; height: 14px; box-shadow: 0px 0px 0px 2px inset; border-radius: 15px 0px 0px; left: 1px; }
+.icon-file{ float: left; width: 14px; height: 14px; position: relative; display: block; }
+.icon-filter::before,.icon-filter::after { position: absolute; content: ""; display: block; }
+.icon-filter::before { height: 0px; border-top: 10px solid; border-left: 7px solid transparent; border-right: 7px solid transparent; }
+.icon-filter::after { width: 4px; height: 9px; box-shadow: 0px 0px 0px 16px inset; top: 6px; left: 5px; }
+.icon-filter{ float: left; width: 14px; height: 14px; position: relative; display: block; }
+.icon-flag::before,.icon-flag::after { position: absolute; content: ""; display: block; }
+.icon-flag::before { width: 6px; height: 8px; box-shadow: 0px 0px 0px 10px inset; top: 1px; }
+.icon-flag::after { width: 5px; height: 5px; box-shadow: 0px 0px 0px 8px inset; top: 5px; left: 5px; }
+.icon-flag{ float: left; width: 14px; height: 14px; position: relative; display: block; transform: rotate(-45deg); height: 16px; width: 8px; border-left: 2px solid; top: -2px; left: 4px; }
+.icon-folder::before,.icon-folder::after { position: absolute; content: ""; display: block; }
+.icon-folder::before { width: 16px; height: 11px; border-radius: 2px 2px 0px 0px; box-shadow: 0px 0px 0px 20px inset; top: 3px; left: -1px; }
+.icon-folder::after { width: 8px; height: 5px; box-shadow: 0px 0px 0px 10px inset; border-radius: 1px 1px 0px 0px; left: 1px; }
+.icon-folder{ float: left; width: 14px; height: 14px; position: relative; display: block; }
+.icon-forbidden::before,.icon-forbidden::after { position: absolute; content: ""; display: block; }
+.icon-forbidden::after { transform: rotate(45deg); }
+.icon-forbidden::before { width: 14px; height: 14px; box-shadow: 0px 0px 0px 3px inset; border-radius: 20px; }
+.icon-forbidden::after { width: 2px; height: 12px; box-shadow: 0px 0px 0px 16px inset; top: 1px; left: 6px; }
+.icon-forbidden{ float: left; width: 14px; height: 14px; position: relative; display: block; }
+.icon-forward::before,.icon-forward::after { position: absolute; content: ""; display: block; }
+.icon-forward::before,.icon-forward::after { border-top: 8px solid transparent; border-bottom: 8px solid transparent; top: -1px; left: -1px; }
+.icon-forward::before,.icon-forward::after { border-left: 8px solid; }
+.icon-forward::after { left: 7px; }
+.icon-forward{ float: left; width: 14px; height: 14px; position: relative; display: block; }
+.icon-gear::before,.icon-gear::after { position: absolute; content: ""; display: block; }
+.icon-gear::before { width: 14px; height: 14px; box-shadow: 0px 0px 0px 4px inset; border-radius: 16px; border: 1px dashed; top: -1px; left: -1px; }
+.icon-gear{ float: left; width: 14px; height: 14px; position: relative; display: block; }
+.icon-heart::before,.icon-heart::after { position: absolute; content: ""; display: block; }
+.icon-heart::before,.icon-heart::after { transform: rotate(-45deg); }
+.icon-heart::after { transform: rotate(45deg); }
+.icon-heart::before,.icon-heart::after { width: 10px; height: 14px; box-shadow: 0px 0px 0px 20px inset; border-radius: 20px 20px 0px 0px; top: -1px; }
+.icon-heart::after { left: 4px; }
+.icon-heart{ float: left; width: 14px; height: 14px; position: relative; display: block; }
+.icon-left::before,.icon-left::after { position: absolute; content: ""; display: block; }
+.icon-left::after { transform: rotate(-45deg); }
+.icon-left::before { transform: rotate(45deg); }
+.icon-left::before,.icon-left::after { width: 3px; height: 10px; box-shadow: 0px 0px 0px 16px inset; top: -1px; left: 5px; }
+.icon-left::after { top: 5px; }
+.icon-left{ float: left; width: 14px; height: 14px; position: relative; display: block; }
+.icon-link::before,.icon-link::after { position: absolute; content: ""; display: block; }
+.icon-link::before,.icon-link::after { width: 5px; height: 7px; border-radius: 5px; border: 2px solid; left: -6px; }
+.icon-link::before { border-bottom: none; top: -4px; }
+.icon-link::after { border-top: none; top: 6px; }
+.icon-link{ float: left; width: 14px; height: 14px; position: relative; display: block; transform: rotate(-45deg); width: 5px; height: 11px; left: 5px; border-left: 3px solid; }
+.icon-list::before,.icon-list::after { position: absolute; content: ""; display: block; }
+.icon-list::before,.icon-list::after { height: 2px; width: 16px; border-top: 3px solid; border-bottom: 3px solid; left: -1px; }
+.icon-list::after { border-top: none; border-bottom: 3px solid; top: 8px; }
+.icon-list{ float: left; width: 14px; height: 14px; position: relative; display: block; }
+.icon-location::before,.icon-location::after { position: absolute; content: ""; display: block; }
+.icon-location::before { width: 8px; height: 8px; left: 3px; border-radius: 8px; box-shadow: 0px 0px 0px 3px inset; }
+.icon-location::after { top: 6px; left: 3px; border-top: 10px solid; border-left: 4px solid transparent; border-right: 4px solid transparent; }
+.icon-location{ float: left; width: 14px; height: 14px; position: relative; display: block; }
+.icon-lock::before,.icon-lock::after { position: absolute; content: ""; display: block; }
+.icon-lock::before { width: 14px; height: 10px; top: 5px; border-radius: 2px 2px 0px 0px; box-shadow: 0px 0px 0px 16px inset; }
+.icon-lock::after { height: 4px; width: 5px; border-radius: 15px 15px 0px 0px; border-top: 3px solid; border-right: 3px solid; border-left: 3px solid; border-image: initial; border-bottom: none; top: -1px; left: 1px; }
+.icon-lock{ float: left; width: 14px; height: 14px; position: relative; display: block; }
+.icon-pause::before,.icon-pause::after { position: absolute; content: ""; display: block; }
+.icon-pause::before,.icon-pause::after { width: 4px; height: 14px; box-shadow: 0px 0px 0px 16px inset; left: 2px; }
+.icon-pause::after { left: 8px; }
+.icon-pause{ float: left; width: 14px; height: 14px; position: relative; display: block; }
+.icon-photo::before,.icon-photo::after { position: absolute; content: ""; display: block; }
+.icon-photo::before { width: 14px; height: 14px; border-radius: 14px; box-shadow: 0px 0px 0px 4px inset; }
+.icon-photo::after { width: 14px; height: 12px; box-shadow: 0px 0px 0px 2px inset; top: 1px; }
+.icon-photo{ float: left; width: 14px; height: 14px; position: relative; display: block; }
+.icon-play::before,.icon-play::after { position: absolute; content: ""; display: block; }
+.icon-play::before { border-left: 9px solid; border-top: 8px solid transparent; border-bottom: 8px solid transparent; top: -1px; left: 3px; }
+.icon-play{ float: left; width: 14px; height: 14px; position: relative; display: block; }
+.icon-profile::before,.icon-profile::after { position: absolute; content: ""; display: block; }
+.icon-profile::before { width: 16px; height: 8px; border-radius: 8px 8px 0px 0px; box-shadow: 0px 0px 0px 16px inset; top: 7px; left: -1px; }
+.icon-profile::after { width: 7px; height: 8px; box-shadow: 0px 0px 0px 16px inset; border-radius: 7px 8px; left: 3px; }
+.icon-profile{ float: left; width: 14px; height: 14px; position: relative; display: block; }
+.icon-right::before,.icon-right::after { position: absolute; content: ""; display: block; }
+.icon-right::before { transform: rotate(-45deg); }
+.icon-right::after { transform: rotate(45deg); }
+.icon-right::before,.icon-right::after { width: 3px; height: 10px; box-shadow: 0px 0px 0px 16px inset; top: -1px; left: 5px; }
+.icon-right::before,.icon-right::after { left: 6px; }
+.icon-right::after { top: 5px; }
+.icon-right{ float: left; width: 14px; height: 14px; position: relative; display: block; }
+.icon-search::before,.icon-search::after { position: absolute; content: ""; display: block; }
+.icon-search::before { width: 10px; height: 10px; border-radius: 10px; box-shadow: 0px 0px 0px 2px inset; }
+.icon-search::after { width: 4px; height: 10px; top: 9px; left: 3px; box-shadow: 0px 0px 0px 2px inset; border-radius: 3px; }
+.icon-search{ float: left; width: 14px; height: 14px; position: relative; display: block; transform: rotate(-45deg); top: -3px; left: 1px; width: 13px; }
+.icon-share::before,.icon-share::after { position: absolute; content: ""; display: block; }
+.icon-share::before { height: 0px; border-left: 6px solid; border-top: 6px solid transparent; border-bottom: 6px solid transparent; left: 8px; }
+.icon-share::after { width: 14px; height: 16px; border-radius: 16px; border-width: 5px 0px 0px; border-right-style: initial; border-bottom-style: initial; border-left-style: initial; border-color: initial; border-image: initial; border-top-style: solid; transform: rotate(-25deg); top: 3px; left: 2px; }
+.icon-share{ float: left; width: 14px; height: 14px; position: relative; display: block; width: 14px; transform: rotate(10deg); }
+.icon-sound::before,.icon-sound::after { position: absolute; content: ""; display: block; }
+.icon-sound::before { width: 7px; height: 8px; box-shadow: 0px 0px 0px 16px inset; top: 3px; border-radius: 2px; }
+.icon-sound::after { border-right: 8px solid; border-top: 8px solid transparent; border-bottom: 8px solid transparent; top: -1px; left: 5px; }
+.icon-sound{ float: left; width: 14px; height: 14px; position: relative; display: block; }
+.icon-step-backward::before,.icon-step-backward::after { position: absolute; content: ""; display: block; }
+.icon-step-backward::before { width: 3px; height: 14px; box-shadow: 0px 0px 0px 8px inset; }
+.icon-step-backward::after { border-top: 8px solid transparent; border-bottom: 8px solid transparent; }
+.icon-step-backward::before { left: 1px; }
+.icon-step-backward::after { border-right: 8px solid; top: -1px; left: 4px; }
+.icon-step-backward{ float: left; width: 14px; height: 14px; position: relative; display: block; }
+.icon-step-forward::before,.icon-step-forward::after { position: absolute; content: ""; display: block; }
+.icon-step-forward::after { width: 3px; height: 14px; box-shadow: 0px 0px 0px 8px inset; }
+.icon-step-forward::before { border-top: 8px solid transparent; border-bottom: 8px solid transparent; }
+.icon-step-forward::before { border-left: 8px solid; top: -1px; left: 1px; }
+.icon-step-forward::after { left: 10px; }
+.icon-step-forward{ float: left; width: 14px; height: 14px; position: relative; display: block; }
+.icon-stop::before,.icon-stop::after { position: absolute; content: ""; display: block; }
+.icon-stop{ float: left; width: 14px; height: 14px; position: relative; display: block; box-shadow: 0px 0px 0px 16px inset; }
+.icon-tag::before,.icon-tag::after { position: absolute; content: ""; display: block; }
+.icon-tag::before { width: 8px; height: 8px; box-shadow: 0px 0px 0px 2px inset; border-radius: 8px; top: -2px; left: 3px; }
+.icon-tag::after { width: 8px; height: 12px; box-shadow: 0px 0px 0px 16px inset; top: 3px; left: 3px; }
+.icon-tag{ float: left; width: 14px; height: 14px; position: relative; display: block; transform: rotate(-45deg); width: 12px; height: 14px; }
+.icon-unlock::before,.icon-unlock::after { position: absolute; content: ""; display: block; }
+.icon-unlock::before { width: 14px; height: 10px; top: 5px; border-radius: 2px 2px 0px 0px; box-shadow: 0px 0px 0px 16px inset; }
+.icon-unlock::after { height: 4px; width: 5px; border-radius: 15px 15px 0px 0px; border-top: 3px solid; border-right: 3px solid; border-left: 3px solid; border-image: initial; border-bottom: none; top: -1px; left: 1px; }
+.icon-unlock::after { left: -4px; }
+.icon-unlock{ float: left; width: 14px; height: 14px; position: relative; display: block; }
+.icon-up::before,.icon-up::after { position: absolute; content: ""; display: block; }
+.icon-up::after { transform: rotate(-45deg); }
+.icon-up::before { transform: rotate(45deg); }
+.icon-up::before,.icon-up::after { width: 3px; height: 10px; box-shadow: 0px 0px 0px 16px inset; top: -1px; left: 5px; }
+.icon-up::before { left: 3px; }
+.icon-up::after { left: 8px; }
+.icon-up::before,.icon-up::after { top: 2px; }
+.icon-up{ float: left; width: 14px; height: 14px; position: relative; display: block; }
+.icon-video::before,.icon-video::after { position: absolute; content: ""; display: block; }
+.icon-video::before { height: 12px; width: 12px; border-radius: 3px; box-shadow: 0px 0px 0px 15px inset; top: 1px; }
+.icon-video::after { border-right: 8px solid; border-top: 4px solid transparent; border-bottom: 4px solid transparent; top: 3px; left: 8px; }
+.icon-video{ float: left; width: 14px; height: 14px; position: relative; display: block; }
+.icon-wrench::before,.icon-wrench::after { position: absolute; content: ""; display: block; }
+.icon-wrench::before { width: 4px; height: 5px; top: -2px; left: 3px; border-right: 3px solid; border-bottom: 3px solid; border-left: 3px solid; border-image: initial; border-radius: 5px; border-top: none; }
+.icon-wrench::after { width: 4px; height: 13px; top: 4px; left: 6px; box-shadow: 0px 0px 0px 16px inset; border-radius: 3px; }
+.icon-wrench{ float: left; width: 14px; height: 14px; position: relative; display: block; transform: rotate(45deg); }
