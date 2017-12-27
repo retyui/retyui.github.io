@@ -31,9 +31,7 @@
 .icono-hamburger{ width: 20px; height: 2px; box-shadow: 0px 0px 0px 32px inset, 0px -6px, 0px 6px; margin: 16px 7px; display: inline-block; vertical-align: middle; position: relative; font-style: normal; color: rgb(221, 221, 221); text-align: left; text-indent: -9999px; direction: ltr; box-sizing: border-box;
 }
 
-.icono-plus::after,.icono-plus::before { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
-
-.icono-plus::after,.icono-plus::before { box-shadow: 0px 0px 0px 32px inset; }
+.icono-plus::after,.icono-plus::before { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); box-shadow: 0px 0px 0px 32px inset; }
 
 .icono-plus::before { width: 20px; height: 2px; }
 
@@ -44,9 +42,7 @@
 .icono-plus{ width: 30px; height: 30px; margin: 2px; display: inline-block; vertical-align: middle; position: relative; font-style: normal; color: rgb(221, 221, 221); text-align: left; text-indent: -9999px; direction: ltr; box-sizing: border-box;
 }
 
-.icono-cross::after,.icono-cross::before { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
-
-.icono-cross::after,.icono-cross::before { box-shadow: 0px 0px 0px 32px inset; }
+.icono-cross::after,.icono-cross::before { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); box-shadow: 0px 0px 0px 32px inset; }
 
 .icono-cross::before { width: 20px; height: 2px; }
 
@@ -57,13 +53,9 @@
 .icono-cross{ width: 30px; height: 30px; margin: 2px; transform: rotate(45deg); display: inline-block; vertical-align: middle; position: relative; font-style: normal; color: rgb(221, 221, 221); text-align: left; text-indent: -9999px; direction: ltr; box-sizing: border-box;
 }
 
-.icono-check::before { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
+.icono-check::before { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 20px; height: 2px; }
 
-.icono-check::before { box-shadow: 0px 0px 0px 32px inset; }
-
-.icono-check::before { width: 20px; height: 2px; }
-
-.icono-check::after,.icono-check::before { box-shadow: 0px 0px 0px 32px inset; }
+.icono-check::before,.icono-check::after,.icono-check::before { box-shadow: 0px 0px 0px 32px inset; }
 
 .icono-check::after { position: absolute; height: 12px; width: 2px; left: 4px; bottom: 14px; }
 
@@ -92,9 +84,7 @@
 .icono-heart{ width: 20px; height: 20px; border-top-color: transparent; border-left-color: transparent; transform: rotate(45deg); border-radius: 4px 0px; margin: 9px 7px 5px; display: inline-block; vertical-align: middle; position: relative; font-style: normal; color: rgb(221, 221, 221); text-align: left; text-indent: -9999px; direction: ltr; box-sizing: border-box;
 }
 
-.icono-infinity::after,.icono-infinity::before { border: 2px solid; }
-
-.icono-infinity::after,.icono-infinity::before { width: 10px; height: 10px; position: absolute; transform: rotate(45deg); }
+.icono-infinity::after,.icono-infinity::before { border: 2px solid; width: 10px; height: 10px; position: absolute; transform: rotate(45deg); }
 
 .icono-infinity::before { left: 0px; border-radius: 32px 0px 32px 32px; }
 
@@ -105,9 +95,7 @@
 .icono-infinity{ width: 32px; height: 16px; margin: 9px 1px; display: inline-block; vertical-align: middle; position: relative; font-style: normal; color: rgb(221, 221, 221); text-align: left; text-indent: -9999px; direction: ltr; box-sizing: border-box;
 }
 
-.icono-flag::after,.icono-flag::before { border: 2px solid; }
-
-.icono-flag::after,.icono-flag::before { position: absolute; width: 9px; height: 8px; }
+.icono-flag::after,.icono-flag::before { border: 2px solid; position: absolute; width: 9px; height: 8px; }
 
 .icono-flag::before { left: -2px; top: 1px; border-radius: 0px 2px 0px 0px; border-right-width: 3px; }
 
@@ -147,9 +135,11 @@
 .icono-video{ border: 2px solid; width: 20px; height: 20px; margin: 7px; display: inline-block; vertical-align: middle; position: relative; font-style: normal; color: rgb(221, 221, 221); text-align: left; text-indent: -9999px; direction: ltr; box-sizing: border-box;
 }
 
-.icono-music::before { position: absolute; width: 2px; height: 16px; left: 0px; top: 4px; box-shadow: 0px 0px 0px 32px inset, 16px 0px 0px 0px; }
+.icono-music::before { width: 2px; height: 16px; left: 0px; top: 4px; }
 
-.icono-music::after { position: absolute; width: 10px; height: 8px; left: -8px; top: 17px; border-radius: 50%; box-shadow: 0px 0px 0px 32px inset, 16px 0px 0px 0px; }
+.icono-music::before,.icono-music::after { position: absolute; box-shadow: 0px 0px 0px 32px inset, 16px 0px 0px 0px; }
+
+.icono-music::after { width: 10px; height: 8px; left: -8px; top: 17px; border-radius: 50%; }
 
 .icono-music::after,.icono-music::before { content: ""; pointer-events: none; }
 
@@ -174,9 +164,11 @@
 .icono-document{ border: 2px solid; width: 26px; height: 32px; border-radius: 0px 0px 0px 10px; margin: 1px 4px; display: inline-block; vertical-align: middle; position: relative; font-style: normal; color: rgb(221, 221, 221); text-align: left; text-indent: -9999px; direction: ltr; box-sizing: border-box;
 }
 
-.icono-folder::before { position: absolute; width: 12px; height: 20px; left: -12px; bottom: -2px; border-width: 0px 0px 2px 2px; border-style: solid; border-radius: 0px 0px 0px 3px; }
+.icono-folder::before { width: 12px; height: 20px; bottom: -2px; border-width: 0px 0px 2px 2px; border-radius: 0px 0px 0px 3px; }
 
-.icono-folder::after { position: absolute; width: 10px; height: 5px; left: -12px; top: -7px; border-width: 2px 2px 0px; border-style: solid; border-radius: 3px 3px 0px 0px; }
+.icono-folder::before,.icono-folder::after { position: absolute; left: -12px; border-style: solid; }
+
+.icono-folder::after { width: 10px; height: 5px; top: -7px; border-width: 2px 2px 0px; border-radius: 3px 3px 0px 0px; }
 
 .icono-folder::after,.icono-folder::before { content: ""; pointer-events: none; }
 
@@ -185,9 +177,7 @@
 
 .icono-pin,.icono-pin::before { border: 2px solid; }
 
-.icono-pin::before { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
-
-.icono-pin::before { position: absolute; width: 6px; height: 6px; border-radius: 50%; }
+.icono-pin::before { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 6px; height: 6px; border-radius: 50%; }
 
 .icono-pin::after,.icono-pin::before { content: ""; pointer-events: none; }
 
@@ -205,9 +195,7 @@
 .icono-smile{ border-radius: 50%; height: 30px; width: 30px; margin: 2px; display: inline-block; vertical-align: middle; position: relative; font-style: normal; color: rgb(221, 221, 221); text-align: left; text-indent: -9999px; direction: ltr; box-sizing: border-box;
 }
 
-.icono-eye::before { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
-
-.icono-eye::before { border-radius: 50%; box-shadow: 0px -3px 0px 3px inset; height: 11px; width: 11px; }
+.icono-eye::before { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); border-radius: 50%; box-shadow: 0px -3px 0px 3px inset; height: 11px; width: 11px; }
 
 .icono-eye::after,.icono-eye::before { content: ""; pointer-events: none; }
 
@@ -254,9 +242,7 @@
 .icono-reset{ width: 26px; height: 26px; border-radius: 50%; border-width: 2px; border-style: solid; border-left-color: transparent; margin: 4px; display: inline-block; vertical-align: middle; position: relative; font-style: normal; color: rgb(221, 221, 221); text-align: left; text-indent: -9999px; direction: ltr; box-sizing: border-box;
 }
 
-.icono-gear::before { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
-
-.icono-gear::before { width: 22px; height: 22px; box-shadow: 0px 0px 0px 3px, 0px 0px 0px 2px inset; border-radius: 50%; border: 6px solid transparent; box-sizing: border-box; }
+.icono-gear::before { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 22px; height: 22px; box-shadow: 0px 0px 0px 3px, 0px 0px 0px 2px inset; border-radius: 50%; border: 6px solid transparent; box-sizing: border-box; }
 
 .icono-gear::after,.icono-gear::before { content: ""; pointer-events: none; }
 
@@ -281,18 +267,18 @@
 .icono-signOut{ width: 18px; height: 32px; border-right: none; border-radius: 3px 0px 0px 3px; margin: 1px 8px; display: inline-block; vertical-align: middle; position: relative; font-style: normal; color: rgb(221, 221, 221); text-align: left; text-indent: -9999px; direction: ltr; box-sizing: border-box;
 }
 
-.icono-support::before { position: absolute; width: 7px; height: 7px; top: -3px; left: -3px; transform: rotate(45deg); box-shadow: 0px 0px 0px 32px inset, 21px 0px 0px 0px; }
+.icono-support::before { left: -3px; transform: rotate(45deg); }
 
-.icono-support::after { position: absolute; width: 7px; height: 7px; top: -3px; right: -3px; transform: rotate(135deg); box-shadow: 0px 0px 0px 32px inset, 21px 0px 0px 0px; }
+.icono-support::before,.icono-support::after { position: absolute; width: 7px; height: 7px; top: -3px; box-shadow: 0px 0px 0px 32px inset, 21px 0px 0px 0px; }
+
+.icono-support::after { right: -3px; transform: rotate(135deg); }
 
 .icono-support::after,.icono-support::before { content: ""; pointer-events: none; }
 
 .icono-support{ width: 26px; height: 26px; border: 5px solid transparent; box-shadow: 0px 0px 0px 2px inset, 0px 0px 0px 2px; border-radius: 50%; margin: 4px; display: inline-block; vertical-align: middle; position: relative; font-style: normal; color: rgb(221, 221, 221); text-align: left; text-indent: -9999px; direction: ltr; box-sizing: border-box;
 }
 
-.icono-dropper::before { position: absolute; top: 50%; transform: translateY(-50%); }
-
-.icono-dropper::before { width: 4px; height: 14px; right: 10px; box-shadow: 0px 0px 0px 32px inset; }
+.icono-dropper::before { position: absolute; top: 50%; transform: translateY(-50%); width: 4px; height: 14px; right: 10px; box-shadow: 0px 0px 0px 32px inset; }
 
 .icono-dropper::after,.icono-dropper::before { content: ""; pointer-events: none; }
 
@@ -304,20 +290,14 @@
 .icono-tiles{ width: 4px; height: 4px; box-shadow: 0px -8px 0px, -8px -8px 0px, 8px -8px 0px, 0px 0px 0px 32px inset, -8px 0px 0px, 8px 0px 0px, 0px 8px 0px, -8px 8px 0px, 8px 8px 0px; margin: 15px; display: inline-block; vertical-align: middle; position: relative; font-style: normal; color: rgb(221, 221, 221); text-align: left; text-indent: -9999px; direction: ltr; box-sizing: border-box;
 }
 
-.icono-list::before { position: absolute; top: 50%; transform: translateY(-50%); }
-
-.icono-list::before { width: 18px; height: 4px; left: 8px; box-shadow: 0px 0px 0px 32px inset, 0px -8px 0px 0px, 0px 8px 0px 0px; }
+.icono-list::before { position: absolute; top: 50%; transform: translateY(-50%); width: 18px; height: 4px; left: 8px; box-shadow: 0px 0px 0px 32px inset, 0px -8px 0px 0px, 0px 8px 0px 0px; }
 
 .icono-list::after,.icono-list::before { content: ""; pointer-events: none; }
 
 .icono-list{ width: 4px; height: 4px; box-shadow: 0px 0px 0px 32px inset, 0px -8px 0px 0px, 0px 8px 0px 0px; margin: 15px 26px 15px 4px; display: inline-block; vertical-align: middle; position: relative; font-style: normal; color: rgb(221, 221, 221); text-align: left; text-indent: -9999px; direction: ltr; box-sizing: border-box;
 }
 
-.icono-chain::after,.icono-chain::before { border: 2px solid; }
-
-.icono-chain::after,.icono-chain::before { position: absolute; top: 50%; transform: translateY(-50%); }
-
-.icono-chain::after,.icono-chain::before { width: 12px; height: 8px; border-radius: 4px; }
+.icono-chain::after,.icono-chain::before { border: 2px solid; position: absolute; top: 50%; transform: translateY(-50%); width: 12px; height: 8px; border-radius: 4px; }
 
 .icono-chain::before { right: -10px; }
 
@@ -328,18 +308,14 @@
 .icono-chain{ width: 16px; height: 2px; box-shadow: 0px 0px 0px 32px inset; transform: rotate(-45deg); margin: 16px 9px; display: inline-block; vertical-align: middle; position: relative; font-style: normal; color: rgb(221, 221, 221); text-align: left; text-indent: -9999px; direction: ltr; box-sizing: border-box;
 }
 
-.icono-rename::before { position: absolute; top: 50%; transform: translateY(-50%); }
-
-.icono-rename::before { width: 1px; height: 18px; left: 9px; border-width: 2px 4px; border-style: solid; border-right-color: transparent; border-left-color: transparent; box-shadow: 0px 0px 0px 1px inset; }
+.icono-rename::before { position: absolute; top: 50%; transform: translateY(-50%); width: 1px; height: 18px; left: 9px; border-width: 2px 4px; border-style: solid; border-right-color: transparent; border-left-color: transparent; box-shadow: 0px 0px 0px 1px inset; }
 
 .icono-rename::after,.icono-rename::before { content: ""; pointer-events: none; }
 
 .icono-rename{ border: 2px solid; width: 26px; height: 10px; border-color: transparent; border-width: 3px; box-shadow: 0px 0px 0px 1px, 11px 0px 0px 0px inset; margin: 12px 4px; display: inline-block; vertical-align: middle; position: relative; font-style: normal; color: rgb(221, 221, 221); text-align: left; text-indent: -9999px; direction: ltr; box-sizing: border-box;
 }
 
-.icono-search::before { position: absolute; left: 50%; transform: translateX(-50%); }
-
-.icono-search::before { width: 4px; height: 11px; box-shadow: 0px 0px 0px 32px inset; top: 19px; border-radius: 0px 0px 1px 1px; }
+.icono-search::before { position: absolute; left: 50%; transform: translateX(-50%); width: 4px; height: 11px; box-shadow: 0px 0px 0px 32px inset; top: 19px; border-radius: 0px 0px 1px 1px; }
 
 .icono-search::after,.icono-search::before { content: ""; pointer-events: none; }
 
@@ -348,36 +324,32 @@
 
 .icono-book,.icono-book::after,.icono-book::before { border: 2px solid; }
 
-.icono-book::before { position: absolute; width: 24px; height: 7px; box-sizing: border-box; border-top: none; border-right: none; left: -2px; top: -5px; border-radius: 0px 0px 0px 6px; }
+.icono-book::before { height: 7px; border-top: none; border-right: none; top: -5px; border-radius: 0px 0px 0px 6px; }
 
-.icono-book::after { position: absolute; width: 24px; height: 8px; box-sizing: border-box; left: -2px; top: -8px; border-bottom: none; border-radius: 6px 0px 0px; }
+.icono-book::before,.icono-book::after { position: absolute; width: 24px; box-sizing: border-box; left: -2px; }
+
+.icono-book::after { height: 8px; top: -8px; border-bottom: none; border-radius: 6px 0px 0px; }
 
 .icono-book::after,.icono-book::before { content: ""; pointer-events: none; }
 
 .icono-book{ width: 26px; height: 22px; border-radius: 0px 0px 0px 6px; border-top: none; margin: 10px 4px 2px; display: inline-block; vertical-align: middle; position: relative; font-style: normal; color: rgb(221, 221, 221); text-align: left; text-indent: -9999px; direction: ltr; box-sizing: border-box;
 }
 
-.icono-forbidden::before { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
-
-.icono-forbidden::before { width: 24px; height: 4px; box-shadow: 0px 0px 0px 32px inset; }
+.icono-forbidden::before { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 24px; height: 4px; box-shadow: 0px 0px 0px 32px inset; }
 
 .icono-forbidden::after,.icono-forbidden::before { content: ""; pointer-events: none; }
 
 .icono-forbidden{ border: 2px solid; width: 28px; height: 28px; border-width: 3px; border-radius: 50%; margin: 3px; transform: rotate(45deg); display: inline-block; vertical-align: middle; position: relative; font-style: normal; color: rgb(221, 221, 221); text-align: left; text-indent: -9999px; direction: ltr; box-sizing: border-box;
 }
 
-.icono-trash::before { position: absolute; left: 50%; transform: translateX(-50%); }
-
-.icono-trash::before { width: 8px; height: 2px; top: -6px; box-shadow: 0px 0px 0px 32px inset, -10px 2px 0px 0px, -6px 2px 0px 0px, 0px 2px 0px 0px, 6px 2px 0px 0px, 10px 2px 0px 0px; }
+.icono-trash::before { position: absolute; left: 50%; transform: translateX(-50%); width: 8px; height: 2px; top: -6px; box-shadow: 0px 0px 0px 32px inset, -10px 2px 0px 0px, -6px 2px 0px 0px, 0px 2px 0px 0px, 6px 2px 0px 0px, 10px 2px 0px 0px; }
 
 .icono-trash::after,.icono-trash::before { content: ""; pointer-events: none; }
 
 .icono-trash{ border: 2px solid; width: 22px; height: 22px; border-radius: 0px 0px 3px 3px; border-top: none; margin: 9px 6px 3px; display: inline-block; vertical-align: middle; position: relative; font-style: normal; color: rgb(221, 221, 221); text-align: left; text-indent: -9999px; direction: ltr; box-sizing: border-box;
 }
 
-.icono-keyboard::before { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
-
-.icono-keyboard::before { width: 2px; height: 2px; box-shadow: -2px -4px 0px, -6px -4px 0px, -10px -4px 0px, 2px -4px 0px, 6px -4px 0px, 8px -4px 0px, 10px -4px 0px, -4px 0px 0px, -8px 0px 0px, -10px 0px 0px, 0px 0px 0px 32px inset, 4px 0px 0px, 8px 0px 0px, 10px 0px 0px, 4px 4px 0px, 2px 4px 0px, 0px 4px 0px, -2px 4px 0px, -6px 4px 0px, -10px 4px 0px, 6px 4px 0px, 10px 4px 0px; }
+.icono-keyboard::before { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 2px; height: 2px; box-shadow: -2px -4px 0px, -6px -4px 0px, -10px -4px 0px, 2px -4px 0px, 6px -4px 0px, 8px -4px 0px, 10px -4px 0px, -4px 0px 0px, -8px 0px 0px, -10px 0px 0px, 0px 0px 0px 32px inset, 4px 0px 0px, 8px 0px 0px, 10px 0px 0px, 4px 4px 0px, 2px 4px 0px, 0px 4px 0px, -2px 4px 0px, -6px 4px 0px, -10px 4px 0px, 6px 4px 0px, 10px 4px 0px; }
 
 .icono-keyboard::after,.icono-keyboard::before { content: ""; pointer-events: none; }
 
@@ -399,9 +371,7 @@
 
 .icono-user,.icono-user::before { border: 2px solid; }
 
-.icono-user::before { position: absolute; left: 50%; transform: translateX(-50%); }
-
-.icono-user::before { width: 12px; height: 12px; top: -20px; border-radius: 50%; }
+.icono-user::before { position: absolute; left: 50%; transform: translateX(-50%); width: 12px; height: 12px; top: -20px; border-radius: 50%; }
 
 .icono-user::after,.icono-user::before { content: ""; pointer-events: none; }
 
@@ -441,9 +411,7 @@
 .icono-imac{ border: 2px solid; width: 28px; height: 24px; border-width: 2px 2px 6px; border-color: transparent; border-radius: 3px; box-shadow: 0px 0px 0px 1px, 0px 0px 0px 1px inset; margin: 3px 3px 7px; display: inline-block; vertical-align: middle; position: relative; font-style: normal; color: rgb(221, 221, 221); text-align: left; text-indent: -9999px; direction: ltr; box-sizing: border-box;
 }
 
-.icono-iphone::after,.icono-iphone::before { position: absolute; left: 50%; transform: translateX(-50%); }
-
-.icono-iphone::after,.icono-iphone::before { box-shadow: 0px 0px 0px 32px inset; }
+.icono-iphone::after,.icono-iphone::before { position: absolute; left: 50%; transform: translateX(-50%); box-shadow: 0px 0px 0px 32px inset; }
 
 .icono-iphone::before { width: 3px; height: 1px; top: -3px; }
 
@@ -454,11 +422,7 @@
 .icono-iphone{ border: 2px solid; width: 19px; height: 31px; border-radius: 3px; border-width: 5px 1px; border-color: transparent; box-shadow: 0px 0px 0px 1px, 0px 0px 0px 1px inset; margin: 2px 8px 1px 7px; display: inline-block; vertical-align: middle; position: relative; font-style: normal; color: rgb(221, 221, 221); text-align: left; text-indent: -9999px; direction: ltr; box-sizing: border-box;
 }
 
-.icono-macbook::before { border: 2px solid; }
-
-.icono-macbook::before { position: absolute; left: 50%; transform: translateX(-50%); }
-
-.icono-macbook::before { width: 20px; height: 14px; bottom: 2px; border-width: 3px 1px 1px; border-color: transparent; border-radius: 3px 3px 0px 0px; box-shadow: 0px 0px 0px 1px, 0px 0px 0px 1px inset; }
+.icono-macbook::before { border: 2px solid; position: absolute; left: 50%; transform: translateX(-50%); width: 20px; height: 14px; bottom: 2px; border-width: 3px 1px 1px; border-color: transparent; border-radius: 3px 3px 0px 0px; box-shadow: 0px 0px 0px 1px, 0px 0px 0px 1px inset; }
 
 .icono-macbook::after,.icono-macbook::before { content: ""; pointer-events: none; }
 
@@ -481,11 +445,7 @@
 .icono-iphoneBold{ border: 2px solid; width: 20px; height: 32px; margin: 1px 7px; border-radius: 4px; border-width: 5px 2px; display: inline-block; vertical-align: middle; position: relative; font-style: normal; color: rgb(221, 221, 221); text-align: left; text-indent: -9999px; direction: ltr; box-sizing: border-box;
 }
 
-.icono-macbookBold::before { border: 2px solid; }
-
-.icono-macbookBold::before { position: absolute; left: 50%; transform: translateX(-50%); }
-
-.icono-macbookBold::before { width: 20px; height: 14px; bottom: 2px; border-width: 3px 2px 1px; border-radius: 3px 3px 0px 0px; }
+.icono-macbookBold::before { border: 2px solid; position: absolute; left: 50%; transform: translateX(-50%); width: 20px; height: 14px; bottom: 2px; border-width: 3px 2px 1px; border-radius: 3px 3px 0px 0px; }
 
 .icono-macbookBold::after,.icono-macbookBold::before { content: ""; pointer-events: none; }
 
@@ -529,14 +489,12 @@
 
 .icono-terminal::after,.icono-terminal::before { content: ""; pointer-events: none; }
 
-.icono-terminal{ border: 2px solid; width: 28px; height: 24px; margin: 5px 3px; display: inline-block; vertical-align: middle; position: relative; font-style: normal; color: rgb(221, 221, 221); text-align: left; text-indent: -9999px; direction: ltr; box-sizing: border-box;
+.icono-terminal{ width: 28px; height: 24px; margin: 5px 3px; display: inline-block; vertical-align: middle; position: relative; font-style: normal; color: rgb(221, 221, 221); text-align: left; text-indent: -9999px; direction: ltr; box-sizing: border-box;
 }
 
-.icono-paperClip,.icono-paperClip::after,.icono-paperClip::before { border: 2px solid; }
+.icono-terminal,.icono-paperClip,.icono-paperClip::after,.icono-paperClip::before { border: 2px solid; }
 
-.icono-paperClip::before { position: absolute; top: 50%; transform: translateY(-50%); }
-
-.icono-paperClip::before { width: 18px; height: 6px; right: 2px; border-radius: 0px 16px 16px 0px; border-left: none; }
+.icono-paperClip::before { position: absolute; top: 50%; transform: translateY(-50%); width: 18px; height: 6px; right: 2px; border-radius: 0px 16px 16px 0px; border-left: none; }
 
 .icono-paperClip::after { position: absolute; width: 12px; height: 10px; left: -12px; top: -2px; border-right: none; border-radius: 16px 0px 0px 16px; }
 
@@ -558,9 +516,7 @@
 .icono-market{ width: 32px; height: 12px; border-top: none; margin: 19px 1px 3px; display: inline-block; vertical-align: middle; position: relative; font-style: normal; color: rgb(221, 221, 221); text-align: left; text-indent: -9999px; direction: ltr; box-sizing: border-box;
 }
 
-.icono-clock::after,.icono-clock::before { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
-
-.icono-clock::after,.icono-clock::before { top: 35%; box-shadow: 0px 0px 0px 32px inset; border-radius: 2px; }
+.icono-clock::after,.icono-clock::before { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); top: 35%; box-shadow: 0px 0px 0px 32px inset; border-radius: 2px; }
 
 .icono-clock::before { width: 2px; height: 9px; }
 
@@ -582,9 +538,7 @@
 .icono-textAlignRight{ width: 28px; height: 22px; margin: 6px 3px; display: inline-block; vertical-align: middle; position: relative; font-style: normal; color: rgb(221, 221, 221); text-align: left; text-indent: -9999px; direction: ltr; box-sizing: border-box;
 }
 
-.icono-textAlignCenter::after,.icono-textAlignCenter::before { position: absolute; left: 50%; transform: translateX(-50%); }
-
-.icono-textAlignCenter::after,.icono-textAlignCenter::before { position: absolute; height: 2px; box-shadow: 0px 0px 0px 32px inset, 0px 8px 0px 0px, 0px 16px 0px 0px; right: 0px; }
+.icono-textAlignCenter::after,.icono-textAlignCenter::before { position: absolute; left: 50%; transform: translateX(-50%); height: 2px; box-shadow: 0px 0px 0px 32px inset, 0px 8px 0px 0px, 0px 16px 0px 0px; right: 0px; }
 
 .icono-textAlignCenter::before { width: 28px; top: 0px; }
 
@@ -601,27 +555,19 @@
 
 .icono-textAlignLeft::after { width: 18px; top: 4px; }
 
-.icono-textAlignLeft::after,.icono-textAlignLeft::before { left: 0px; }
-
-.icono-textAlignLeft::after,.icono-textAlignLeft::before { content: ""; pointer-events: none; }
+.icono-textAlignLeft::after,.icono-textAlignLeft::before { left: 0px; content: ""; pointer-events: none; }
 
 .icono-textAlignLeft{ width: 28px; height: 22px; margin: 6px 3px; display: inline-block; vertical-align: middle; position: relative; font-style: normal; color: rgb(221, 221, 221); text-align: left; text-indent: -9999px; direction: ltr; box-sizing: border-box;
 }
 
-.icono-indent::before { position: absolute; top: 50%; transform: translateY(-50%); }
-
-.icono-indent::before { left: -8px; border-width: 5px 0px 5px 5px; border-style: solid; border-right-color: initial; border-left-color: initial; border-image: initial; border-top-color: transparent; border-bottom-color: transparent; }
+.icono-indent::before { position: absolute; top: 50%; transform: translateY(-50%); left: -8px; border-width: 5px 0px 5px 5px; border-style: solid; border-right-color: initial; border-left-color: initial; border-image: initial; border-top-color: transparent; border-bottom-color: transparent; }
 
 .icono-indent::after,.icono-indent::before { content: ""; pointer-events: none; }
 
 .icono-indent{ width: 20px; height: 16px; border-width: 4px 0px 4px 8px; border-style: solid; border-color: transparent; box-shadow: 0px -2px, 0px 2px, 0px 2px inset, 0px -2px inset; margin: 9px 7px; display: inline-block; vertical-align: middle; position: relative; font-style: normal; color: rgb(221, 221, 221); text-align: left; text-indent: -9999px; direction: ltr; box-sizing: border-box;
 }
 
-.icono-outdent::before { position: absolute; top: 50%; transform: translateY(-50%); }
-
-.icono-outdent::before { left: -8px; border-width: 5px 0px 5px 5px; border-style: solid; border-right-color: initial; border-left-color: initial; border-image: initial; border-top-color: transparent; border-bottom-color: transparent; }
-
-.icono-outdent::before { border-left-width: 0px; border-right-width: 5px; }
+.icono-outdent::before { position: absolute; top: 50%; transform: translateY(-50%); left: -8px; border-width: 5px 0px 5px 5px; border-style: solid; border-right-color: initial; border-left-color: initial; border-image: initial; border-top-color: transparent; border-bottom-color: transparent; border-left-width: 0px; border-right-width: 5px; }
 
 .icono-outdent::after,.icono-outdent::before { content: ""; pointer-events: none; }
 
@@ -632,9 +578,7 @@
 
 .icono-frown::before { border-radius: 50%; box-shadow: 8px 0px 0px 0px, 0px 0px 0px 2px inset; height: 4px; width: 4px; left: 7px; position: absolute; top: 27%; }
 
-.icono-frown::after { border-radius: 50%; transform: translateX(-50%); border-top-color: transparent; border-left-color: transparent; border-right-color: transparent; height: 16px; left: 50%; position: absolute; top: 6%; width: 16px; }
-
-.icono-frown::after { transform: translateX(-50%) rotate(180deg); transform-origin: center 85% 0px; }
+.icono-frown::after { border-radius: 50%; transform: translateX(-50%); border-top-color: transparent; border-left-color: transparent; border-right-color: transparent; height: 16px; left: 50%; position: absolute; top: 6%; width: 16px; transform: translateX(-50%) rotate(180deg); transform-origin: center 85% 0px; }
 
 .icono-frown::after,.icono-frown::before { content: ""; pointer-events: none; }
 
@@ -645,9 +589,7 @@
 
 .icono-meh::before { border-radius: 50%; box-shadow: 8px 0px 0px 0px, 0px 0px 0px 2px inset; height: 4px; width: 4px; left: 7px; position: absolute; top: 27%; }
 
-.icono-meh::after { border-radius: 50%; transform: translateX(-50%); border-top-color: transparent; border-left-color: transparent; border-right-color: transparent; height: 16px; left: 50%; position: absolute; top: 6%; width: 16px; }
-
-.icono-meh::after { top: 0px; width: 12px; border-left-width: 0px; border-right-width: 0px; border-radius: 0px; }
+.icono-meh::after { border-radius: 50%; transform: translateX(-50%); border-top-color: transparent; border-left-color: transparent; border-right-color: transparent; height: 16px; left: 50%; position: absolute; top: 6%; width: 16px; top: 0px; width: 12px; border-left-width: 0px; border-right-width: 0px; border-radius: 0px; }
 
 .icono-meh::after,.icono-meh::before { content: ""; pointer-events: none; }
 
@@ -663,9 +605,7 @@
 .icono-locationArrow{ width: 32px; height: 32px; margin: 1px; display: inline-block; vertical-align: middle; position: relative; font-style: normal; color: rgb(221, 221, 221); text-align: left; text-indent: -9999px; direction: ltr; box-sizing: border-box;
 }
 
-.icono-plusCircle::after,.icono-plusCircle::before { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
-
-.icono-plusCircle::after,.icono-plusCircle::before { box-shadow: 0px 0px 0px 32px inset; }
+.icono-plusCircle::after,.icono-plusCircle::before { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); box-shadow: 0px 0px 0px 32px inset; }
 
 .icono-plusCircle::before { width: 20px; height: 2px; }
 
@@ -682,13 +622,9 @@
 
 .icono-checkCircle,.icono-checkCircle { border: 2px solid; }
 
-.icono-checkCircle::before { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
+.icono-checkCircle::before { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 20px; height: 2px; }
 
-.icono-checkCircle::before { box-shadow: 0px 0px 0px 32px inset; }
-
-.icono-checkCircle::before { width: 20px; height: 2px; }
-
-.icono-checkCircle::after,.icono-checkCircle::before { box-shadow: 0px 0px 0px 32px inset; }
+.icono-checkCircle::before,.icono-checkCircle::after,.icono-checkCircle::before { box-shadow: 0px 0px 0px 32px inset; }
 
 .icono-checkCircle::after { position: absolute; height: 12px; width: 2px; left: 4px; bottom: 14px; }
 
@@ -701,9 +637,7 @@
 .icono-checkCircle{ width: 28px; height: 28px; margin: 3px 0px 3px 6px; transform: rotate(-45deg); border-radius: 50%; width: 30px; height: 30px; margin: 2px; display: inline-block; vertical-align: middle; position: relative; font-style: normal; color: rgb(221, 221, 221); text-align: left; text-indent: -9999px; direction: ltr; border-radius: 50%; width: 30px; height: 30px; margin: 2px; box-sizing: border-box;
 }
 
-.icono-crossCircle::after,.icono-crossCircle::before { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
-
-.icono-crossCircle::after,.icono-crossCircle::before { box-shadow: 0px 0px 0px 32px inset; }
+.icono-crossCircle::after,.icono-crossCircle::before { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); box-shadow: 0px 0px 0px 32px inset; }
 
 .icono-crossCircle::before { width: 20px; height: 2px; }
 
@@ -760,9 +694,11 @@
 .icono-commentEmpty{ border: 2px solid; width: 30px; height: 22px; border-radius: 4px 4px 7px 7px; border-bottom-color: transparent; margin: 5px 2px 7px; display: inline-block; vertical-align: middle; position: relative; font-style: normal; color: rgb(221, 221, 221); text-align: left; text-indent: -9999px; direction: ltr; box-sizing: border-box;
 }
 
-.icono-areaChart::before { position: absolute; left: 0px; bottom: 7px; border-width: 6px; border-style: solid; border-color: transparent transparent currentcolor; border-image: initial; box-shadow: 0px 7px; }
+.icono-areaChart::before { left: 0px; bottom: 7px; border-width: 6px; border-image: initial; box-shadow: 0px 7px; }
 
-.icono-areaChart::after { position: absolute; left: 11px; bottom: 4px; border-width: 0px 6px 13px; border-style: solid; border-color: transparent transparent currentcolor; box-shadow: 0px 4px; }
+.icono-areaChart::before,.icono-areaChart::after { position: absolute; border-style: solid; border-color: transparent transparent currentcolor; }
+
+.icono-areaChart::after { left: 11px; bottom: 4px; border-width: 0px 6px 13px; box-shadow: 0px 4px; }
 
 .icono-areaChart::after,.icono-areaChart::before { content: ""; pointer-events: none; }
 
@@ -807,35 +743,21 @@
 .icono-volume{ width: 0px; height: 0px; border-top: 7px solid transparent; border-right: 7px solid; border-bottom: 7px solid transparent; border-image: initial; border-left: none; padding: 6px 3px; box-shadow: 4px 0px inset; margin: 4px 10px 4px 11px; display: inline-block; vertical-align: middle; position: relative; font-style: normal; color: rgb(221, 221, 221); text-align: left; text-indent: -9999px; direction: ltr; box-sizing: border-box;
 }
 
-.icono-volumeLow::before { border: 2px solid; }
-
-.icono-volumeLow::before { position: absolute; top: 50%; transform: translateY(-50%); }
-
-.icono-volumeLow::before { width: 15px; height: 15px; position: absolute; border-radius: 50%; border-top-color: transparent; border-bottom-color: transparent; border-left-color: transparent; left: 2px; }
+.icono-volumeLow::before { border: 2px solid; position: absolute; top: 50%; transform: translateY(-50%); width: 15px; height: 15px; border-radius: 50%; border-top-color: transparent; border-bottom-color: transparent; border-left-color: transparent; left: 2px; }
 
 .icono-volumeLow::after,.icono-volumeLow::before { content: ""; pointer-events: none; }
 
 .icono-volumeLow{ width: 0px; height: 0px; border-top: 7px solid transparent; border-right: 7px solid; border-bottom: 7px solid transparent; border-image: initial; border-left: none; padding: 6px 3px; box-shadow: 4px 0px inset; margin: 4px 10px 4px 11px; margin: 4px 14px 4px 7px; display: inline-block; vertical-align: middle; position: relative; font-style: normal; color: rgb(221, 221, 221); text-align: left; text-indent: -9999px; direction: ltr; box-sizing: border-box;
 }
 
-.icono-volumeMedium::before { border: 2px solid; }
-
-.icono-volumeMedium::before { position: absolute; top: 50%; transform: translateY(-50%); }
-
-.icono-volumeMedium::before { width: 15px; height: 15px; position: absolute; border-radius: 50%; border-top-color: transparent; border-bottom-color: transparent; border-left-color: transparent; left: 2px; }
-
-.icono-volumeMedium::before { border-style: double; border-width: 6px; left: -2px; }
+.icono-volumeMedium::before { border: 2px solid; position: absolute; top: 50%; transform: translateY(-50%); width: 15px; height: 15px; border-radius: 50%; border-top-color: transparent; border-bottom-color: transparent; border-left-color: transparent; left: 2px; border-style: double; border-width: 6px; left: -2px; }
 
 .icono-volumeMedium::after,.icono-volumeMedium::before { content: ""; pointer-events: none; }
 
 .icono-volumeMedium{ width: 0px; height: 0px; border-top: 7px solid transparent; border-right: 7px solid; border-bottom: 7px solid transparent; border-image: initial; border-left: none; padding: 6px 3px; box-shadow: 4px 0px inset; margin: 4px 10px 4px 11px; margin: 4px 14px 4px 7px; margin: 4px 16px 4px 5px; display: inline-block; vertical-align: middle; position: relative; font-style: normal; color: rgb(221, 221, 221); text-align: left; text-indent: -9999px; direction: ltr; box-sizing: border-box;
 }
 
-.icono-volumeHigh::after,.icono-volumeHigh::before { border: 2px solid; }
-
-.icono-volumeHigh::after,.icono-volumeHigh::before { position: absolute; top: 50%; transform: translateY(-50%); }
-
-.icono-volumeHigh::after,.icono-volumeHigh::before { width: 15px; height: 15px; position: absolute; border-radius: 50%; border-top-color: transparent; border-bottom-color: transparent; border-left-color: transparent; left: 2px; }
+.icono-volumeHigh::after,.icono-volumeHigh::before { border: 2px solid; position: absolute; top: 50%; transform: translateY(-50%); width: 15px; height: 15px; border-radius: 50%; border-top-color: transparent; border-bottom-color: transparent; border-left-color: transparent; left: 2px; }
 
 .icono-volumeHigh::before { border-style: double; border-width: 6px; left: -2px; }
 
@@ -846,9 +768,7 @@
 .icono-volumeHigh{ width: 0px; height: 0px; border-top: 7px solid transparent; border-right: 7px solid; border-bottom: 7px solid transparent; border-image: initial; border-left: none; padding: 6px 3px; box-shadow: 4px 0px inset; margin: 4px 10px 4px 11px; margin: 4px 14px 4px 7px; margin: 4px 16px 4px 5px; margin: 4px 18px 4px 3px; display: inline-block; vertical-align: middle; position: relative; font-style: normal; color: rgb(221, 221, 221); text-align: left; text-indent: -9999px; direction: ltr; box-sizing: border-box;
 }
 
-.icono-volumeDecrease::after,.icono-volumeDecrease::before { position: absolute; top: 50%; transform: translateY(-50%); }
-
-.icono-volumeDecrease::after,.icono-volumeDecrease::before { box-shadow: 0px 0px 0px 32px inset; }
+.icono-volumeDecrease::after,.icono-volumeDecrease::before { position: absolute; top: 50%; transform: translateY(-50%); box-shadow: 0px 0px 0px 32px inset; }
 
 .icono-volumeDecrease::before { width: 10px; height: 2px; left: 17px; }
 
@@ -857,9 +777,7 @@
 .icono-volumeDecrease{ width: 0px; height: 0px; border-top: 7px solid transparent; border-right: 7px solid; border-bottom: 7px solid transparent; border-image: initial; border-left: none; padding: 6px 3px; box-shadow: 4px 0px inset; margin: 4px 10px 4px 11px; margin: 4px 16px 4px 5px; display: inline-block; vertical-align: middle; position: relative; font-style: normal; color: rgb(221, 221, 221); text-align: left; text-indent: -9999px; direction: ltr; box-sizing: border-box;
 }
 
-.icono-volumeIncrease::after,.icono-volumeIncrease::before { position: absolute; top: 50%; transform: translateY(-50%); }
-
-.icono-volumeIncrease::after,.icono-volumeIncrease::before { box-shadow: 0px 0px 0px 32px inset; }
+.icono-volumeIncrease::after,.icono-volumeIncrease::before { position: absolute; top: 50%; transform: translateY(-50%); box-shadow: 0px 0px 0px 32px inset; }
 
 .icono-volumeIncrease::before { width: 10px; height: 2px; left: 17px; }
 
@@ -870,17 +788,13 @@
 .icono-volumeIncrease{ width: 0px; height: 0px; border-top: 7px solid transparent; border-right: 7px solid; border-bottom: 7px solid transparent; border-image: initial; border-left: none; padding: 6px 3px; box-shadow: 4px 0px inset; margin: 4px 10px 4px 11px; margin: 4px 16px 4px 5px; display: inline-block; vertical-align: middle; position: relative; font-style: normal; color: rgb(221, 221, 221); text-align: left; text-indent: -9999px; direction: ltr; box-sizing: border-box;
 }
 
-.icono-volumeMute::after,.icono-volumeMute::before { position: absolute; top: 50%; transform: translateY(-50%); }
-
-.icono-volumeMute::after,.icono-volumeMute::before { box-shadow: 0px 0px 0px 32px inset; }
+.icono-volumeMute::after,.icono-volumeMute::before { position: absolute; top: 50%; transform: translateY(-50%); box-shadow: 0px 0px 0px 32px inset; }
 
 .icono-volumeMute::before { width: 10px; height: 2px; left: 17px; }
 
 .icono-volumeMute::after { height: 10px; width: 2px; left: 21px; }
 
-.icono-volumeMute::after,.icono-volumeMute::before { transform: translateY(-50%) rotate(45deg); }
-
-.icono-volumeMute::after,.icono-volumeMute::before { content: ""; pointer-events: none; }
+.icono-volumeMute::after,.icono-volumeMute::before { transform: translateY(-50%) rotate(45deg); content: ""; pointer-events: none; }
 
 .icono-volumeMute{ width: 0px; height: 0px; border-top: 7px solid transparent; border-right: 7px solid; border-bottom: 7px solid transparent; border-image: initial; border-left: none; padding: 6px 3px; box-shadow: 4px 0px inset; margin: 4px 10px 4px 11px; margin: 4px 16px 4px 5px; display: inline-block; vertical-align: middle; position: relative; font-style: normal; color: rgb(221, 221, 221); text-align: left; text-indent: -9999px; direction: ltr; box-sizing: border-box;
 }
@@ -907,9 +821,7 @@
 .icono-calendar{ width: 32px; height: 28px; border-width: 4px 2px 2px; border-style: solid; border-radius: 4px; margin: 5px 1px 1px; display: inline-block; vertical-align: middle; position: relative; font-style: normal; color: rgb(221, 221, 221); text-align: left; text-indent: -9999px; direction: ltr; box-sizing: border-box;
 }
 
-.icono-camera::before { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
-
-.icono-camera::before { width: 10px; height: 10px; border: 1px solid transparent; box-shadow: 0px 0px 0px 1px inset, 0px 0px 0px 2px; border-radius: 50%; }
+.icono-camera::before { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 10px; height: 10px; border: 1px solid transparent; box-shadow: 0px 0px 0px 1px inset, 0px 0px 0px 2px; border-radius: 50%; }
 
 .icono-camera::after { position: absolute; width: 4px; height: 2px; right: 2px; top: 2px; box-shadow: 0px 0px 0px 32px inset; }
 
@@ -918,9 +830,11 @@
 .icono-camera{ border: 2px solid; width: 32px; height: 24px; border-radius: 4px; margin: 5px 1px; display: inline-block; vertical-align: middle; position: relative; font-style: normal; color: rgb(221, 221, 221); text-align: left; text-indent: -9999px; direction: ltr; box-sizing: border-box;
 }
 
-.icono-piano::before { position: absolute; left: 4px; top: 0px; width: 1px; height: 100%; box-shadow: 0px 0px 0px 32px inset, 5px 0px, 10px 0px, 15px 0px; }
+.icono-piano::before { left: 4px; width: 1px; height: 100%; }
 
-.icono-piano::after { position: absolute; width: 3px; height: 12px; left: 3px; top: 0px; box-shadow: 0px 0px 0px 32px inset, 5px 0px, 10px 0px, 15px 0px; }
+.icono-piano::before,.icono-piano::after { position: absolute; top: 0px; box-shadow: 0px 0px 0px 32px inset, 5px 0px, 10px 0px, 15px 0px; }
+
+.icono-piano::after { width: 3px; height: 12px; left: 3px; }
 
 .icono-piano::after,.icono-piano::before { content: ""; pointer-events: none; }
 
@@ -1005,9 +919,7 @@
 .icono-linkedIn{ width: 5px; height: 16px; box-shadow: 0px 0px 0px 32px inset, 8px 0px; margin: 12px 24px 6px 5px; display: inline-block; vertical-align: middle; position: relative; font-style: normal; color: rgb(221, 221, 221); text-align: left; text-indent: -9999px; direction: ltr; box-sizing: border-box;
 }
 
-.icono-instagram::before { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
-
-.icono-instagram::before { width: 10px; height: 10px; border-radius: 50%; box-shadow: 0px 0px 0px 3px; }
+.icono-instagram::before { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 10px; height: 10px; border-radius: 50%; box-shadow: 0px 0px 0px 3px; }
 
 .icono-instagram::after { position: absolute; width: 5px; height: 5px; border-radius: 1px; right: 3px; top: 3px; box-shadow: 0px 0px 0px 2px, 1px 1px 0px 2px, -5px -1px 0px 1px, -10px -1px 0px 1px, -16px 1px 0px 2px; }
 
@@ -1016,9 +928,7 @@
 .icono-instagram{ width: 26px; height: 26px; box-shadow: 0px 0px 0px 2px inset; border-radius: 4px; margin: 4px; display: inline-block; vertical-align: middle; position: relative; font-style: normal; color: rgb(221, 221, 221); text-align: left; text-indent: -9999px; direction: ltr; box-sizing: border-box;
 }
 
-.icono-flickr::after,.icono-flickr::before { position: absolute; top: 50%; transform: translateY(-50%); }
-
-.icono-flickr::after,.icono-flickr::before { width: 7px; height: 7px; border-radius: 50%; }
+.icono-flickr::after,.icono-flickr::before { position: absolute; top: 50%; transform: translateY(-50%); width: 7px; height: 7px; border-radius: 50%; }
 
 .icono-flickr::before { left: 4px; box-shadow: 0px 0px 0px 1px, 0px -10px 0px 6px, 0px 10px 0px 6px, -4px 0px 0px 3px; }
 
@@ -1036,9 +946,11 @@
 .icono-delicious{ width: 24px; height: 24px; overflow: hidden; border-radius: 4px; box-shadow: 0px 0px 0px 2px inset; margin: 5px; display: inline-block; vertical-align: middle; position: relative; font-style: normal; color: rgb(221, 221, 221); text-align: left; text-indent: -9999px; direction: ltr; box-sizing: border-box;
 }
 
-.icono-codepen::before { position: absolute; right: 2px; top: 3px; width: 11px; height: 4px; transform: skew(0deg, -35deg) scaleY(0.6); box-shadow: 0px 0px 0px 32px inset, 0px 13px, 11px 26px, 12px 39px; }
+.icono-codepen::before { right: 2px; transform: skew(0deg, -35deg) scaleY(0.6); box-shadow: 0px 0px 0px 32px inset, 0px 13px, 11px 26px, 12px 39px; }
 
-.icono-codepen::after { position: absolute; left: 2px; top: 3px; width: 11px; height: 4px; transform: skew(0deg, 35deg) scaleY(0.6); box-shadow: 0px 0px 0px 32px inset, 0px 13px, -11px 26px, -12px 39px; }
+.icono-codepen::before,.icono-codepen::after { position: absolute; top: 3px; width: 11px; height: 4px; }
+
+.icono-codepen::after { left: 2px; transform: skew(0deg, 35deg) scaleY(0.6); box-shadow: 0px 0px 0px 32px inset, 0px 13px, -11px 26px, -12px 39px; }
 
 .icono-codepen::after,.icono-codepen::before { content: ""; pointer-events: none; }
 
@@ -1091,10 +1003,12 @@
 
 .icono-rewind::after,.icono-rewind::before { content: ""; pointer-events: none; }
 
-.icono-rewind{ transform: rotate(180deg); width: 0px; height: 0px; border-width: 10px; border-style: solid; border-top-color: transparent; border-right-color: transparent; border-bottom-color: transparent; border-image: initial; border-left-color: initial; margin: 7px; display: inline-block; vertical-align: middle; position: relative; font-style: normal; color: rgb(221, 221, 221); text-align: left; text-indent: -9999px; direction: ltr; box-sizing: border-box;
+.icono-rewind{ transform: rotate(180deg); margin: 7px; display: inline-block; vertical-align: middle; position: relative; font-style: normal; color: rgb(221, 221, 221); text-align: left; text-indent: -9999px; direction: ltr; box-sizing: border-box;
 }
 
-.icono-forward::before { position: absolute; left: 0px; top: -10px; width: 0px; height: 0px; border-width: 10px; border-style: solid; border-top-color: transparent; border-right-color: transparent; border-bottom-color: transparent; border-image: initial; border-left-color: initial; }
+.icono-rewind,.icono-forward::before { width: 0px; height: 0px; border-width: 10px; border-style: solid; border-top-color: transparent; border-right-color: transparent; border-bottom-color: transparent; border-image: initial; border-left-color: initial; }
+
+.icono-forward::before { position: absolute; left: 0px; top: -10px; }
 
 .icono-forward::after,.icono-forward::before { content: ""; pointer-events: none; }
 
@@ -1155,36 +1069,28 @@
 .icono-caretDown{ width: 12px; height: 20px; margin: 7px 11px; transform: rotate(90deg); display: inline-block; vertical-align: middle; position: relative; font-style: normal; color: rgb(221, 221, 221); text-align: left; text-indent: -9999px; direction: ltr; box-sizing: border-box;
 }
 
-.icono-rightArrow::before { position: absolute; top: 50%; transform: translateY(-50%); }
-
-.icono-rightArrow::before { border-style: solid; border-width: 8px 0px 8px 8px; border-top-color: transparent; border-right-color: transparent; border-bottom-color: transparent; border-left-color: inherit; left: 100%; right: auto; }
+.icono-rightArrow::before { position: absolute; top: 50%; transform: translateY(-50%); border-style: solid; border-width: 8px 0px 8px 8px; border-top-color: transparent; border-right-color: transparent; border-bottom-color: transparent; border-left-color: inherit; left: 100%; right: auto; }
 
 .icono-rightArrow::after,.icono-rightArrow::before { content: ""; pointer-events: none; }
 
 .icono-rightArrow{ width: 16px; height: 4px; margin: 15px 9px; box-shadow: 0px 0px 0px 2px inset; transform: translateX(-3px); display: inline-block; vertical-align: middle; position: relative; font-style: normal; color: rgb(221, 221, 221); text-align: left; text-indent: -9999px; direction: ltr; box-sizing: border-box;
 }
 
-.icono-leftArrow::before { position: absolute; top: 50%; transform: translateY(-50%); }
-
-.icono-leftArrow::before { border-style: solid; border-width: 8px 0px 8px 8px; border-top-color: transparent; border-right-color: transparent; border-bottom-color: transparent; border-left-color: inherit; left: 100%; right: auto; }
+.icono-leftArrow::before { position: absolute; top: 50%; transform: translateY(-50%); border-style: solid; border-width: 8px 0px 8px 8px; border-top-color: transparent; border-right-color: transparent; border-bottom-color: transparent; border-left-color: inherit; left: 100%; right: auto; }
 
 .icono-leftArrow::after,.icono-leftArrow::before { content: ""; pointer-events: none; }
 
 .icono-leftArrow{ width: 16px; height: 4px; margin: 15px 9px; box-shadow: 0px 0px 0px 2px inset; transform: translateX(-3px); transform: translateX(3px) rotate(180deg); display: inline-block; vertical-align: middle; position: relative; font-style: normal; color: rgb(221, 221, 221); text-align: left; text-indent: -9999px; direction: ltr; box-sizing: border-box;
 }
 
-.icono-upArrow::before { position: absolute; top: 50%; transform: translateY(-50%); }
-
-.icono-upArrow::before { border-style: solid; border-width: 8px 0px 8px 8px; border-top-color: transparent; border-right-color: transparent; border-bottom-color: transparent; border-left-color: inherit; left: 100%; right: auto; }
+.icono-upArrow::before { position: absolute; top: 50%; transform: translateY(-50%); border-style: solid; border-width: 8px 0px 8px 8px; border-top-color: transparent; border-right-color: transparent; border-bottom-color: transparent; border-left-color: inherit; left: 100%; right: auto; }
 
 .icono-upArrow::after,.icono-upArrow::before { content: ""; pointer-events: none; }
 
 .icono-upArrow{ width: 16px; height: 4px; margin: 15px 9px; box-shadow: 0px 0px 0px 2px inset; transform: translateX(-3px); transform: translateY(3px) rotate(-90deg); display: inline-block; vertical-align: middle; position: relative; font-style: normal; color: rgb(221, 221, 221); text-align: left; text-indent: -9999px; direction: ltr; box-sizing: border-box;
 }
 
-.icono-downArrow::before { position: absolute; top: 50%; transform: translateY(-50%); }
-
-.icono-downArrow::before { border-style: solid; border-width: 8px 0px 8px 8px; border-top-color: transparent; border-right-color: transparent; border-bottom-color: transparent; border-left-color: inherit; left: 100%; right: auto; }
+.icono-downArrow::before { position: absolute; top: 50%; transform: translateY(-50%); border-style: solid; border-width: 8px 0px 8px 8px; border-top-color: transparent; border-right-color: transparent; border-bottom-color: transparent; border-left-color: inherit; left: 100%; right: auto; }
 
 .icono-downArrow::after,.icono-downArrow::before { content: ""; pointer-events: none; }
 
@@ -1209,9 +1115,7 @@
 
 .icono-caretRightCircle::after { top: 0px; transform: rotate(-45deg); }
 
-.icono-caretRightCircle::after,.icono-caretRightCircle::before { width: 11px; right: 8px; }
-
-.icono-caretRightCircle::after,.icono-caretRightCircle::before { content: ""; pointer-events: none; }
+.icono-caretRightCircle::after,.icono-caretRightCircle::before { width: 11px; right: 8px; content: ""; pointer-events: none; }
 
 .icono-caretRightCircle{ border: 2px solid; width: 12px; height: 20px; margin: 7px 11px; display: inline-block; vertical-align: middle; position: relative; font-style: normal; color: rgb(221, 221, 221); text-align: left; text-indent: -9999px; direction: ltr; border-radius: 50%; width: 30px; height: 30px; margin: 2px; box-sizing: border-box;
 }
@@ -1222,9 +1126,7 @@
 
 .icono-caretLeftCircle::after { top: 0px; transform: rotate(-45deg); }
 
-.icono-caretLeftCircle::after,.icono-caretLeftCircle::before { width: 11px; right: 8px; }
-
-.icono-caretLeftCircle::after,.icono-caretLeftCircle::before { content: ""; pointer-events: none; }
+.icono-caretLeftCircle::after,.icono-caretLeftCircle::before { width: 11px; right: 8px; content: ""; pointer-events: none; }
 
 .icono-caretLeftCircle{ border: 2px solid; width: 12px; height: 20px; margin: 7px 11px; transform: rotate(180deg); display: inline-block; vertical-align: middle; position: relative; font-style: normal; color: rgb(221, 221, 221); text-align: left; text-indent: -9999px; direction: ltr; border-radius: 50%; width: 30px; height: 30px; margin: 2px; box-sizing: border-box;
 }
@@ -1235,9 +1137,7 @@
 
 .icono-caretUpCircle::after { top: 0px; transform: rotate(-45deg); }
 
-.icono-caretUpCircle::after,.icono-caretUpCircle::before { width: 11px; right: 8px; }
-
-.icono-caretUpCircle::after,.icono-caretUpCircle::before { content: ""; pointer-events: none; }
+.icono-caretUpCircle::after,.icono-caretUpCircle::before { width: 11px; right: 8px; content: ""; pointer-events: none; }
 
 .icono-caretUpCircle{ border: 2px solid; width: 12px; height: 20px; margin: 7px 11px; transform: rotate(-90deg); display: inline-block; vertical-align: middle; position: relative; font-style: normal; color: rgb(221, 221, 221); text-align: left; text-indent: -9999px; direction: ltr; border-radius: 50%; width: 30px; height: 30px; margin: 2px; box-sizing: border-box;
 }
@@ -1248,9 +1148,7 @@
 
 .icono-caretDownCircle::after { top: 0px; transform: rotate(-45deg); }
 
-.icono-caretDownCircle::after,.icono-caretDownCircle::before { width: 11px; right: 8px; }
-
-.icono-caretDownCircle::after,.icono-caretDownCircle::before { content: ""; pointer-events: none; }
+.icono-caretDownCircle::after,.icono-caretDownCircle::before { width: 11px; right: 8px; content: ""; pointer-events: none; }
 
 .icono-caretDownCircle{ border: 2px solid; width: 12px; height: 20px; margin: 7px 11px; transform: rotate(90deg); display: inline-block; vertical-align: middle; position: relative; font-style: normal; color: rgb(221, 221, 221); text-align: left; text-indent: -9999px; direction: ltr; border-radius: 50%; width: 30px; height: 30px; margin: 2px; box-sizing: border-box;
 }
@@ -1261,9 +1159,7 @@
 
 .icono-caretRightSquare::after { top: 0px; transform: rotate(-45deg); }
 
-.icono-caretRightSquare::after,.icono-caretRightSquare::before { width: 11px; right: 8px; }
-
-.icono-caretRightSquare::after,.icono-caretRightSquare::before { content: ""; pointer-events: none; }
+.icono-caretRightSquare::after,.icono-caretRightSquare::before { width: 11px; right: 8px; content: ""; pointer-events: none; }
 
 .icono-caretRightSquare{ border: 2px solid; width: 12px; height: 20px; margin: 7px 11px; display: inline-block; vertical-align: middle; position: relative; font-style: normal; color: rgb(221, 221, 221); text-align: left; text-indent: -9999px; direction: ltr; border-radius: 4px; width: 30px; height: 30px; margin: 2px; box-sizing: border-box;
 }
@@ -1274,9 +1170,7 @@
 
 .icono-caretLeftSquare::after { top: 0px; transform: rotate(-45deg); }
 
-.icono-caretLeftSquare::after,.icono-caretLeftSquare::before { width: 11px; right: 8px; }
-
-.icono-caretLeftSquare::after,.icono-caretLeftSquare::before { content: ""; pointer-events: none; }
+.icono-caretLeftSquare::after,.icono-caretLeftSquare::before { width: 11px; right: 8px; content: ""; pointer-events: none; }
 
 .icono-caretLeftSquare{ border: 2px solid; width: 12px; height: 20px; margin: 7px 11px; transform: rotate(180deg); display: inline-block; vertical-align: middle; position: relative; font-style: normal; color: rgb(221, 221, 221); text-align: left; text-indent: -9999px; direction: ltr; border-radius: 4px; width: 30px; height: 30px; margin: 2px; box-sizing: border-box;
 }
@@ -1287,9 +1181,7 @@
 
 .icono-caretUpSquare::after { top: 0px; transform: rotate(-45deg); }
 
-.icono-caretUpSquare::after,.icono-caretUpSquare::before { width: 11px; right: 8px; }
-
-.icono-caretUpSquare::after,.icono-caretUpSquare::before { content: ""; pointer-events: none; }
+.icono-caretUpSquare::after,.icono-caretUpSquare::before { width: 11px; right: 8px; content: ""; pointer-events: none; }
 
 .icono-caretUpSquare{ border: 2px solid; width: 12px; height: 20px; margin: 7px 11px; transform: rotate(-90deg); display: inline-block; vertical-align: middle; position: relative; font-style: normal; color: rgb(221, 221, 221); text-align: left; text-indent: -9999px; direction: ltr; border-radius: 4px; width: 30px; height: 30px; margin: 2px; box-sizing: border-box;
 }
@@ -1300,9 +1192,7 @@
 
 .icono-caretDownSquare::after { top: 0px; transform: rotate(-45deg); }
 
-.icono-caretDownSquare::after,.icono-caretDownSquare::before { width: 11px; right: 8px; }
-
-.icono-caretDownSquare::after,.icono-caretDownSquare::before { content: ""; pointer-events: none; }
+.icono-caretDownSquare::after,.icono-caretDownSquare::before { width: 11px; right: 8px; content: ""; pointer-events: none; }
 
 .icono-caretDownSquare{ border: 2px solid; width: 12px; height: 20px; margin: 7px 11px; transform: rotate(90deg); display: inline-block; vertical-align: middle; position: relative; font-style: normal; color: rgb(221, 221, 221); text-align: left; text-indent: -9999px; direction: ltr; border-radius: 4px; width: 30px; height: 30px; margin: 2px; box-sizing: border-box;
 }
