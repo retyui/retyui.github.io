@@ -1,5 +1,5 @@
 @font-face {
-	font-family: 'Material Icons ir3c';
+	font-family: 'Material Icons 3f62';
 	font-style: normal;
 	font-weight: 400;
 	src: url(src-icons-md.woff2) format('woff2'), url(src-icons-md.woff) format('woff');
@@ -27,7 +27,7 @@
 
 	/* Support for IE. */
 	font-feature-settings: 'liga';
-	font-family: 'Material Icons ir3c';
+	font-family: 'Material Icons 3f62';
 }
 .c-icon--3d-rotation::before{
 	content: '\E84D'; }
