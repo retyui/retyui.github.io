@@ -1,5 +1,5 @@
 @font-face {
-	font-family: 'FontAwesome c50c';
+	font-family: 'FontAwesome d02c';
 	font-style: normal;
 	font-weight: 400;
 	src: url(src-icons-fa.woff2) format('woff2'), url(src-icons-fa.woff) format('woff');
@@ -15,7 +15,7 @@
 	text-rendering: auto;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	font-family: 'FontAwesome c50c';
+	font-family: 'FontAwesome d02c';
 }
 .c-icon--500px::before{
 	content: '\F26E'; }
