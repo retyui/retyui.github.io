@@ -15,13 +15,13 @@ export class CommonJs {
 					try {
 						throw new Error();
 					} catch (e) {
-						const arr = e.stack.split("at");
+						const arr = e.stack.split(" at");
 						that.tmp.set(arr[2], v);
 					}
 				}
 			};
 		} else {
-			delete window.module;
+			window.module = void 0;
 		}
 		return this;
 	}
@@ -40,7 +40,7 @@ export class CommonJs {
 			this.exports.set(path, val);
 			return val;
 		} else {
-			throw new Error("хуевая идея");
+			throw new Error("bad idea");
 		}
 	}
 }
