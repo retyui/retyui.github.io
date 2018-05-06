@@ -1,0 +1,22 @@
+{
+	"name": "magento-1-test",
+	"version": "1.0.0",
+	"main": "index.js",
+	"license": "MIT",
+	"scripts": {
+		"server": "npx browser-sync start --server --files \"js/*.js\" \"css/*.css\" \"index.html\"",
+		"js": "prettier --use-tabs --write ./js/**/*.js",
+		"sw": "sw-precache --config=tools/precache.js --verbose"
+	},
+	"pre-commit": [
+		"js",
+		"sw"
+	],
+	"dependencies": {
+		"highlight.js": "^9.12.0"
+	},
+	"devDependencies": {
+		"pre-commit": "^1.2.2",
+		"sw-precache": "^5.2.0"
+	}
+}

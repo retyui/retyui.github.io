@@ -28,7 +28,7 @@ coverage
 build/Release
 
 # Dependency directories
-node_modules
+node_modules/
 jspm_packages
 
 # Optional npm cache directory
@@ -36,3 +36,5 @@ jspm_packages
 
 # Optional REPL history
 .node_repl_history
+!magento-certification/node_modules/highlight.js/styles/*
+!magento-certification/node_modules/highlight.js/lib/*
