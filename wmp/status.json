@@ -1,0 +1,13 @@
+{
+"ver_code":30,
+"ver_name":"3.12.0",
+"cancelable_update": true,
+"delay_time":99999999,
+"return_ad_enabled":true,
+"exit_ad_enabled":true,
+"what_news": "what_news",
+"what_news_en": "what_news_en",
+"update_link":"https://gist.github.com/retyui/d1c1ad8fe609dfee75cb694a7ca40b63",
+"status":1,
+"message":""
+}
