@@ -1,6 +1,6 @@
 # retyui.github.io
 
-- [react-native-confirmation-code-field web demo]https://retyui.github.io/react-native-confirmation-code-field/)
+- [react-native-confirmation-code-field web demo](https://retyui.github.io/react-native-confirmation-code-field/)
 
 - [Game in canvas (PWA)](https://retyui.github.io/pwa-canvas/index.html)
 - [Demo for Modern generation Icon images for Retina display](https://retyui.github.io/modern-generation-icon-for-retina-display/)
