@@ -30,10 +30,21 @@
           position: -webkit-sticky;
           position: sticky;
           top: 0;
-          z-index: 2;
+          z-index: 9;
           background: white;
           border: 1px solid #bcbcbc;
           height: 56px;
+          font-size: 12px;
+        }
+
+        #mytable tr:nth-child(2) > td {
+          font-size: 12px;
+        }
+        #mytable tr > td {
+          text-align: center;
+        }
+        #mytable tr > td:nth-child(3) {
+          text-align: left;
           font-size: 12px;
         }
 
@@ -45,6 +56,7 @@
           background: white;
           border: 1px solid #bcbcbc;
           font-size: 12px;
+          text-align: right;
         }
       }
       /** -- End Sticky header -- */
@@ -56,15 +68,15 @@
         <th></th>
         <th>JS feature</th>
         <th>TS lib</th>
-        <th>hermes@0.5.1</th>
-        <th>hermes@0.7.2</th>
-        <th>hermes@0.8.1</th>
-        <th>hermes@0.9.0</th>
-        <th>hermes@0.11.0</th>
-        <th>jsc-android@245459</th>
-        <th>jsc-android@245459 (*intl)</th>
-        <th>jsc-android@250230</th>
-        <th>jsc-android@250230 (*intl)</th>
+        <th>hermes 0.5.1</th>
+        <th>hermes 0.7.2</th>
+        <th>hermes 0.8.1</th>
+        <th>hermes 0.9.0</th>
+        <th>hermes 0.11.0</th>
+        <th>jsc-android 245459</th>
+        <th>jsc-android 245459 (*intl)</th>
+        <th>jsc-android 250230</th>
+        <th>jsc-android 250230 (*intl)</th>
         <th>iOS 11</th>
         <th>iOS 12</th>
         <th>iOS 12.4</th>
@@ -94,10 +106,10 @@
         <td>0.65.x</td>
         <td>0.66.x, 0.67.x</td>
         <td>0.68.x, 0.69.x</td>
-        <td>0.60.x...0.64.x</td>
-        <td>0.60.x...0.64.x</td>
-        <td>0.65.x...0.69.x</td>
-        <td>0.65.x...0.69.x</td>
+        <td>0.60.x – 0.64.x</td>
+        <td>0.60.x – 0.64.x</td>
+        <td>0.65.x – 0.69.x</td>
+        <td>0.65.x – 0.69.x</td>
         <td>*</td>
         <td>*</td>
         <td>*</td>
@@ -780,7 +792,7 @@
       </tr>
       <tr>
         <td></td>
-        <td>Intl.DateTimeFormat.prototype.formatToParts(date)</td>
+        <td>Intl.DateTimeFormat::formatToParts(date)</td>
         <td>es2017.intl</td>
         <td>❌</td>
         <td>❌</td>
