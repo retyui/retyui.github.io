@@ -6,17 +6,17 @@
     <title>ECMAScript 6 compatibility table for React Native Engines</title>
     <style>
       /**
-       * Sticky header
-       *
-       * As of December, 2019, several browsers do not support
-       * position: sticky on `thead` and `tr` elements. As a solution, we apply
-       * position: sticky to the `th` elements.
-       * But there's a caveat: we have two rows of `th` elements and we do not want
-       * them to overlap. The default height of the first row is 44px, so we set
-       * top: 44px for the second row. But actual height may be different depending
-       * on browser rendering, so we also detect true first-header-row-height with
-       * javascript and update the custom css property.
-       */
+     * Sticky header
+     *
+     * As of December, 2019, several browsers do not support
+     * position: sticky on `thead` and `tr` elements. As a solution, we apply
+     * position: sticky to the `th` elements.
+     * But there's a caveat: we have two rows of `th` elements and we do not want
+     * them to overlap. The default height of the first row is 44px, so we set
+     * top: 44px for the second row. But actual height may be different depending
+     * on browser rendering, so we also detect true first-header-row-height with
+     * javascript and update the custom css property.
+     */
 
       body,
       html {
@@ -68,15 +68,19 @@
         <th></th>
         <th>JS feature</th>
         <th>TS lib</th>
+        <th>v8-android 9.93.0</th>
+        <th>v8-android 10.100.0</th>
+        <th>v8-android 9.93.0 (no Intl)</th>
+        <th>v8-android 10.100.0 (no Intl)</th>
         <th>hermes 0.5.1</th>
         <th>hermes 0.7.2</th>
         <th>hermes 0.8.1</th>
         <th>hermes 0.9.0</th>
         <th>hermes 0.11.0</th>
-        <th>jsc-android 245459</th>
-        <th>jsc-android 245459 (*intl)</th>
-        <th>jsc-android 250230</th>
-        <th>jsc-android 250230 (*intl)</th>
+        <th>jsc-android@245459</th>
+        <th>jsc-android@245459 (*intl)</th>
+        <th>jsc-android@250230</th>
+        <th>jsc-android@250230 (*intl)</th>
         <th>iOS 11</th>
         <th>iOS 12</th>
         <th>iOS 12.4</th>
@@ -101,15 +105,19 @@
         <td>RN</td>
         <td></td>
         <td></td>
+        <td>*</td>
+        <td>*</td>
+        <td>*</td>
+        <td>*</td>
         <td>0.63.x</td>
         <td>0.64.x</td>
         <td>0.65.x</td>
         <td>0.66.x, 0.67.x</td>
         <td>0.68.x, 0.69.x</td>
-        <td>0.60.x – 0.64.x</td>
-        <td>0.60.x – 0.64.x</td>
-        <td>0.65.x – 0.69.x</td>
-        <td>0.65.x – 0.69.x</td>
+        <td>0.60.x...0.64.x</td>
+        <td>0.60.x...0.64.x</td>
+        <td>0.65.x...0.69.x</td>
+        <td>0.65.x...0.69.x</td>
         <td>*</td>
         <td>*</td>
         <td>*</td>
@@ -162,11 +170,19 @@
         <td>✅</td>
         <td>✅</td>
         <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
       </tr>
       <tr>
         <td></td>
         <td>Reflect</td>
         <td>es2015.reflect</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
         <td>❌</td>
         <td>✅</td>
         <td>✅</td>
@@ -200,6 +216,10 @@
         <td></td>
         <td>Proxy</td>
         <td>es2015.proxy</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
         <td>❌</td>
         <td>✅</td>
         <td>✅</td>
@@ -261,11 +281,19 @@
         <td>✅</td>
         <td>✅</td>
         <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
       </tr>
       <tr>
         <td></td>
         <td>Map</td>
         <td>es2015.collection</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
         <td>✅</td>
         <td>✅</td>
         <td>✅</td>
@@ -327,11 +355,19 @@
         <td>✅</td>
         <td>✅</td>
         <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
       </tr>
       <tr>
         <td></td>
         <td>function* (){ ... }</td>
         <td>es2015.generator</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
         <td>✅</td>
         <td>✅</td>
         <td>✅</td>
@@ -393,6 +429,10 @@
         <td>✅</td>
         <td>✅</td>
         <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
       </tr>
       <tr>
         <td></td>
@@ -426,11 +466,19 @@
         <td>✅</td>
         <td>✅</td>
         <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
       </tr>
       <tr>
         <td></td>
         <td>SharedArrayBuffer</td>
         <td>es2017.sharedmemory</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
         <td>❌</td>
         <td>❌</td>
         <td>❌</td>
@@ -464,6 +512,10 @@
         <td></td>
         <td>Atomics</td>
         <td>es2017.typedarrays</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
         <td>❌</td>
         <td>❌</td>
         <td>❌</td>
@@ -525,11 +577,19 @@
         <td>✅</td>
         <td>✅</td>
         <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
       </tr>
       <tr>
         <td></td>
         <td>Uint8ClampedArray</td>
         <td>es2017.typedarrays</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
         <td>✅</td>
         <td>✅</td>
         <td>✅</td>
@@ -591,11 +651,19 @@
         <td>✅</td>
         <td>✅</td>
         <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
       </tr>
       <tr>
         <td></td>
         <td>Uint16Array</td>
         <td>es2017.typedarrays</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
         <td>✅</td>
         <td>✅</td>
         <td>✅</td>
@@ -657,11 +725,19 @@
         <td>✅</td>
         <td>✅</td>
         <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
       </tr>
       <tr>
         <td></td>
         <td>Uint32Array</td>
         <td>es2017.typedarrays</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
         <td>✅</td>
         <td>✅</td>
         <td>✅</td>
@@ -723,11 +799,19 @@
         <td>✅</td>
         <td>✅</td>
         <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
       </tr>
       <tr>
         <td></td>
         <td>Float64Array</td>
         <td>es2017.typedarrays</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
         <td>✅</td>
         <td>✅</td>
         <td>✅</td>
@@ -789,11 +873,19 @@
         <td>✅</td>
         <td>✅</td>
         <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
       </tr>
       <tr>
         <td></td>
-        <td>Intl.DateTimeFormat::formatToParts(date)</td>
+        <td>Intl.DateTimeFormat.prototype.formatToParts(date)</td>
         <td>es2017.intl</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>❌</td>
+        <td>❌</td>
         <td>❌</td>
         <td>❌</td>
         <td>✅</td>
@@ -827,6 +919,10 @@
         <td></td>
         <td>Object.getOwnPropertyDescriptors(obj)</td>
         <td>es2017.object</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
         <td>❌</td>
         <td>✅</td>
         <td>✅</td>
@@ -888,11 +984,19 @@
         <td>✅</td>
         <td>✅</td>
         <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
       </tr>
       <tr>
         <td></td>
         <td>Object.entries(obj)</td>
         <td>es2017.object</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
         <td>✅</td>
         <td>✅</td>
         <td>✅</td>
@@ -954,11 +1058,19 @@
         <td>✅</td>
         <td>✅</td>
         <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
       </tr>
       <tr>
         <td></td>
         <td>String.prototype.padStart</td>
         <td>es2017.string</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
         <td>✅</td>
         <td>✅</td>
         <td>✅</td>
@@ -1020,6 +1132,10 @@
         <td>❌</td>
         <td>❌</td>
         <td>❌</td>
+        <td>❌</td>
+        <td>❌</td>
+        <td>❌</td>
+        <td>❌</td>
       </tr>
       <tr>
         <td></td>
@@ -1053,11 +1169,19 @@
         <td>❌</td>
         <td>❌</td>
         <td>❌</td>
+        <td>❌</td>
+        <td>❌</td>
+        <td>❌</td>
+        <td>❌</td>
       </tr>
       <tr>
         <td></td>
         <td>Symbol.asyncIterator</td>
         <td>es2018.asynciterable</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
         <td>❌</td>
         <td>❌</td>
         <td>❌</td>
@@ -1091,6 +1215,10 @@
         <td></td>
         <td>Intl.PluralRules</td>
         <td>es2018.intl</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>❌</td>
+        <td>❌</td>
         <td>❌</td>
         <td>❌</td>
         <td>❌</td>
@@ -1124,6 +1252,10 @@
         <td></td>
         <td>RegExp.dotAll</td>
         <td>es2018.regexp</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
         <td>✅</td>
         <td>✅</td>
         <td>✅</td>
@@ -1185,11 +1317,19 @@
         <td>✅</td>
         <td>✅</td>
         <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
       </tr>
       <tr>
         <td></td>
         <td>Array.prototype.flat</td>
         <td>es2019.array</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
         <td>✅</td>
         <td>✅</td>
         <td>✅</td>
@@ -1232,6 +1372,10 @@
         <td>✅</td>
         <td>✅</td>
         <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
         <td>❌</td>
         <td>✅</td>
         <td>✅</td>
@@ -1256,6 +1400,10 @@
         <td></td>
         <td>Object.fromEntries</td>
         <td>es2019.object</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
         <td>✅</td>
         <td>✅</td>
         <td>✅</td>
@@ -1298,6 +1446,10 @@
         <td>✅</td>
         <td>✅</td>
         <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
         <td>❌</td>
         <td>✅</td>
         <td>✅</td>
@@ -1322,6 +1474,10 @@
         <td></td>
         <td>String.prototype.trimStart</td>
         <td>es2019.string</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
         <td>✅</td>
         <td>✅</td>
         <td>✅</td>
@@ -1383,6 +1539,10 @@
         <td>✅</td>
         <td>✅</td>
         <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
       </tr>
       <tr>
         <td></td>
@@ -1416,11 +1576,19 @@
         <td>✅</td>
         <td>✅</td>
         <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
       </tr>
       <tr>
         <td></td>
         <td>Symbol.prototype.description</td>
         <td>es2019.symbol</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
         <td>❌</td>
         <td>❌</td>
         <td>✅</td>
@@ -1454,6 +1622,10 @@
         <td></td>
         <td>BigInt</td>
         <td>es2020.bigint</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
         <td>❌</td>
         <td>❌</td>
         <td>❌</td>
@@ -1487,6 +1659,10 @@
         <td></td>
         <td>BigInt64Array</td>
         <td>es2020.bigint</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
         <td>❌</td>
         <td>❌</td>
         <td>❌</td>
@@ -1520,6 +1696,10 @@
         <td></td>
         <td>BigUint64Array</td>
         <td>es2020.bigint</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
         <td>❌</td>
         <td>❌</td>
         <td>❌</td>
@@ -1581,11 +1761,19 @@
         <td>❌</td>
         <td>❌</td>
         <td>❌</td>
+        <td>❌</td>
+        <td>❌</td>
+        <td>❌</td>
+        <td>❌</td>
       </tr>
       <tr>
         <td></td>
         <td>str.matchAll(/regex/g)</td>
         <td>es2020.string</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
         <td>❌</td>
         <td>✅</td>
         <td>✅</td>
@@ -1619,6 +1807,10 @@
         <td></td>
         <td>Symbol.matchAll</td>
         <td>es2020.symbol.wellknown</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
         <td>❌</td>
         <td>✅</td>
         <td>✅</td>
@@ -1680,11 +1872,19 @@
         <td>❌</td>
         <td>❌</td>
         <td>❌</td>
+        <td>❌</td>
+        <td>❌</td>
+        <td>❌</td>
+        <td>❌</td>
       </tr>
       <tr>
         <td></td>
         <td>String.prototype.replaceAll</td>
         <td>es2021.string</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
         <td>❌</td>
         <td>✅</td>
         <td>✅</td>
@@ -1718,6 +1918,10 @@
         <td></td>
         <td>WeakRef</td>
         <td>es2021.weakref</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
         <td>❌</td>
         <td>❌</td>
         <td>❌</td>
@@ -1751,6 +1955,10 @@
         <td></td>
         <td>Intl.ListFormat</td>
         <td>es2021.intl</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>❌</td>
+        <td>❌</td>
         <td>❌</td>
         <td>❌</td>
         <td>❌</td>
@@ -1784,6 +1992,10 @@
         <td></td>
         <td>Intl.ListFormat.supportedLocalesOf</td>
         <td>es2021.intl</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>❌</td>
+        <td>❌</td>
         <td>❌</td>
         <td>❌</td>
         <td>❌</td>
@@ -1817,6 +2029,10 @@
         <td></td>
         <td>Array.prototype.at</td>
         <td>es2022.array</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
         <td>❌</td>
         <td>❌</td>
         <td>❌</td>
@@ -1850,6 +2066,10 @@
         <td></td>
         <td>String.prototype.at</td>
         <td>es2022.string</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
         <td>❌</td>
         <td>❌</td>
         <td>❌</td>
@@ -1883,6 +2103,10 @@
         <td></td>
         <td>AggregateError</td>
         <td>es2022.error</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
         <td>❌</td>
         <td>❌</td>
         <td>❌</td>
@@ -1944,11 +2168,19 @@
         <td>❌</td>
         <td>❌</td>
         <td>❌</td>
+        <td>❌</td>
+        <td>❌</td>
+        <td>❌</td>
+        <td>❌</td>
       </tr>
       <tr>
         <td></td>
         <td>Object.hasOwn</td>
         <td>es2022.object</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
         <td>❌</td>
         <td>❌</td>
         <td>❌</td>
@@ -1982,6 +2214,10 @@
         <td></td>
         <td>Intl.Segmenter</td>
         <td>es2022.intl</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>❌</td>
+        <td>❌</td>
         <td>❌</td>
         <td>❌</td>
         <td>❌</td>
