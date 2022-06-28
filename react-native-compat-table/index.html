@@ -6,17 +6,17 @@
     <title>ECMAScript 6 compatibility table for React Native Engines</title>
     <style>
       /**
-     * Sticky header
-     *
-     * As of December, 2019, several browsers do not support
-     * position: sticky on `thead` and `tr` elements. As a solution, we apply
-     * position: sticky to the `th` elements.
-     * But there's a caveat: we have two rows of `th` elements and we do not want
-     * them to overlap. The default height of the first row is 44px, so we set
-     * top: 44px for the second row. But actual height may be different depending
-     * on browser rendering, so we also detect true first-header-row-height with
-     * javascript and update the custom css property.
-     */
+       * Sticky header
+       *
+       * As of December, 2019, several browsers do not support
+       * position: sticky on `thead` and `tr` elements. As a solution, we apply
+       * position: sticky to the `th` elements.
+       * But there's a caveat: we have two rows of `th` elements and we do not want
+       * them to overlap. The default height of the first row is 44px, so we set
+       * top: 44px for the second row. But actual height may be different depending
+       * on browser rendering, so we also detect true first-header-row-height with
+       * javascript and update the custom css property.
+       */
 
       body,
       html {
@@ -77,10 +77,10 @@
         <th>hermes 0.8.1</th>
         <th>hermes 0.9.0</th>
         <th>hermes 0.11.0</th>
-        <th>jsc-android@245459</th>
-        <th>jsc-android@245459 (*intl)</th>
-        <th>jsc-android@250230</th>
-        <th>jsc-android@250230 (*intl)</th>
+        <th>jsc-android 245459</th>
+        <th>jsc-android 250230</th>
+        <th>jsc-android 245459 (no Intl)</th>
+        <th>jsc-android 250230 (no Intl)</th>
         <th>iOS 11</th>
         <th>iOS 12</th>
         <th>iOS 12.4</th>
@@ -115,8 +115,8 @@
         <td>0.66.x, 0.67.x</td>
         <td>0.68.x, 0.69.x</td>
         <td>0.60.x...0.64.x</td>
-        <td>0.60.x...0.64.x</td>
         <td>0.65.x...0.69.x</td>
+        <td>0.60.x...0.64.x</td>
         <td>0.65.x...0.69.x</td>
         <td>*</td>
         <td>*</td>
@@ -892,28 +892,28 @@
         <td>✅</td>
         <td>✅</td>
         <td>❌</td>
-        <td>❌</td>
-        <td>❌</td>
-        <td>✅</td>
-        <td>❌</td>
-        <td>❌</td>
-        <td>❌</td>
-        <td>✅</td>
-        <td>✅</td>
-        <td>✅</td>
-        <td>✅</td>
-        <td>✅</td>
-        <td>✅</td>
-        <td>✅</td>
         <td>✅</td>
         <td>❌</td>
         <td>❌</td>
         <td>❌</td>
         <td>❌</td>
         <td>❌</td>
-        <td>❌</td>
-        <td>❌</td>
-        <td>❌</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
       </tr>
       <tr>
         <td></td>
@@ -1224,10 +1224,10 @@
         <td>❌</td>
         <td>❌</td>
         <td>❌</td>
-        <td>❌</td>
+        <td>✅</td>
         <td>✅</td>
         <td>❌</td>
-        <td>✅</td>
+        <td>❌</td>
         <td>❌</td>
         <td>❌</td>
         <td>❌</td>
@@ -1780,8 +1780,8 @@
         <td>✅</td>
         <td>✅</td>
         <td>❌</td>
-        <td>❌</td>
         <td>✅</td>
+        <td>❌</td>
         <td>✅</td>
         <td>❌</td>
         <td>❌</td>
@@ -1817,8 +1817,8 @@
         <td>✅</td>
         <td>✅</td>
         <td>❌</td>
-        <td>❌</td>
         <td>✅</td>
+        <td>❌</td>
         <td>✅</td>
         <td>❌</td>
         <td>❌</td>
