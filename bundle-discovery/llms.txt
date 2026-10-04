@@ -7,7 +7,7 @@
 - [Introduction](/bundle-discovery/docs/getting-started/introduction.md): Visualize and analyze the JS bundle of your React Native app. Find heavy packages, duplicates and deprecated dependencies, inspect every module, and catch bundle size regressions in CI.
 - [Quick start](/bundle-discovery/docs/getting-started/quick-start.md): This setup is for a standard Metro project. Using Re.Pack or Rozenite? See Other setups.
 - [Other setups](/bundle-discovery/docs/getting-started/other-setups.md)
-- [UI](/bundle-discovery/docs/guides/ui.md): Requires react-native-bundle-discovery-ui. The top bar shows the platform, whether the bundle is a production/minified build (warns about dev or unminified bundles), the total size split into your code and node_modules, and the report build date.
+- [UI](/bundle-discovery/docs/guides/ui.md): Requires react-native-bundle-discovery-ui. See it in action in the live demo (a static build with --compare). The top bar shows the platform, whether the bundle is a production/minified build (warns about dev or unminified bundles), the total size split into your code and node_modules, and the report build date.
 - [CLI](/bundle-discovery/docs/guides/cli.md): Requires react-native-bundle-discovery-cli. Run any command with --help to see all options. To fail CI on bundle size regressions, see Bundle size checks in CI.
 - [Bundle size checks in CI](/bundle-discovery/docs/guides/ci.md): compare exits with code 1 when any check fails:
 - [Re.Pack](/bundle-discovery/docs/guides/repack.md): For projects using Re.Pack there are two ways to use react-native-bundle-discovery: As the BundleDiscoveryPlugin Webpack/Rspack pluginOr with a JSON report from Rsdoctor

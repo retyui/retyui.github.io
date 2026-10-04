@@ -4,7 +4,7 @@
 
 > Visualize and analyze the JS bundle of your React Native app. Find heavy packages, duplicates and deprecated dependencies, and catch bundle size regressions in CI.
 
-[Quick Start](/docs/getting-started/quick-start) | [GitHub](https://github.com/retyui/react-native-bundle-discovery)
+[Quick Start](/docs/getting-started/quick-start) | [Live demo](https://retyui.github.io/bundle-discovery-demo/) | [GitHub](https://github.com/retyui/react-native-bundle-discovery)
 
 ## Features
 

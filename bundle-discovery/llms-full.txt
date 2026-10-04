@@ -11,6 +11,10 @@ dependencies, inspect every module, and catch bundle size regressions in CI.
 
 ![Bundle Discovery UI: Treemap, Insights and Packages tabs](/img/overview.jpg)
 
+:::tip Try it in the browser
+Open the [live demo](https://retyui.github.io/bundle-discovery-demo/): a real report in compare mode, built with `react-native-bundle-discovery-ui build`.
+:::
+
 ## Features
 
 - 📊 Interactive UI to explore packages, modules and their source/bundled code
@@ -137,6 +141,8 @@ npx react-native-bundle-discovery-ui pr-stats.json --compare main-stats.json
 ```
 
 ![Bundle Discovery UI: Treemap, Insights and Packages tabs](/img/overview.jpg)
+
+See it in action in the [live demo](https://retyui.github.io/bundle-discovery-demo/) (a static build with `--compare`).
 
 The top bar shows the platform, whether the bundle is a production/minified build (warns about dev or
 unminified bundles), the total size split into your code and `node_modules`, and the report build date.
@@ -568,7 +574,7 @@ url: /bundle-discovery/index.md
 
 > Visualize and analyze the JS bundle of your React Native app. Find heavy packages, duplicates and deprecated dependencies, and catch bundle size regressions in CI.
 
-[Quick Start](/docs/getting-started/quick-start) | [GitHub](https://github.com/retyui/react-native-bundle-discovery)
+[Quick Start](/docs/getting-started/quick-start) | [Live demo](https://retyui.github.io/bundle-discovery-demo/) | [GitHub](https://github.com/retyui/react-native-bundle-discovery)
 
 ## Features
 
