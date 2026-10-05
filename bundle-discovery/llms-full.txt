@@ -676,7 +676,7 @@ npx react-native-bundle-discovery-cli esbuild-meta.json
 
 Use the UI inside [React Native DevTools](https://reactnative.dev/docs/react-native-devtools). The plugin is built on top of [Rozenite](https://www.rozenite.dev/).
 
-<img alt="Rozenite plugin" src="__img0" />
+<ThemedImage light="rozenite" dark="rozeniteDark" alt="Bundle Discovery inside React Native DevTools (Rozenite)" className="rounded-lg" />
 
 ## Install [#install]
 
