@@ -1,31 +1,88 @@
----
-url: /bundle-discovery/docs/getting-started/introduction.md
----
+# createResolveRequest (/docs/api/create-resolve-request)
 
-> For AI agents: the complete documentation index is available at /bundle-discovery/llms.txt, the full documentation bundle is available at /bundle-discovery/llms-full.txt.
 
-# Introduction
+
+```ts
+import { createResolveRequest } from "react-native-bundle-discovery";
+```
+
+Creates a Metro `resolveRequest` that removes unnecessary React Native modules from **release** bundles
+(dev builds are not affected). The CLI recommends these options when they apply to your bundle.
+
+## Options [#options]
+
+| Option              | Type      | Default | Description                                                                      |
+| ------------------- | --------- | ------- | -------------------------------------------------------------------------------- |
+| `removeUTFSequence` | `boolean` | `false` | Remove the unused `react-native/Libraries/UTFSequence.js` module.                |
+| `removeNewRenderer` | `boolean` | `false` | Remove the Fabric renderer. Enable only if the New Architecture is **disabled**. |
+
+## Example [#example]
+
+```js title="metro.config.js"
+const { createResolveRequest } = require("react-native-bundle-discovery");
+
+const config = {
+  resolver: {
+    resolveRequest: createResolveRequest({
+      removeUTFSequence: true,
+    }),
+  },
+};
+```
+
+
+# createSerializer (/docs/api/create-serializer)
+
+
+
+```ts
+import { createSerializer } from "react-native-bundle-discovery";
+```
+
+Creates a Metro serializer that writes the JSON report. Use it as `serializer.customSerializer` (see [Quick start](/docs/getting-started/quick-start#2-configure-metro)).
+
+## Options [#options]
+
+| Option                  | Type       | Default                          | Description                                                                               |
+| ----------------------- | ---------- | -------------------------------- | ----------------------------------------------------------------------------------------- |
+| `projectRoot`           | `string`   | **Required**                     | Project root. ⚠️ In a monorepo, use the monorepo root, not the app package directory.     |
+| `outputJsonPath`        | `string`   | `<projectRoot>/metro-stats.json` | Where to save the report.                                                                 |
+| `includeCode`           | `boolean`  | `true`                           | Include source and bundled code of each module in the report (larger file).               |
+| `includeEnvs`           | `string[]` | `[]`                             | Names of environment variables to include in the report.                                  |
+| `fetchPackagesMetadata` | `boolean`  | `true`                           | Fetch package metadata (publish date, deprecation, latest version) from the npm registry. |
+| `silent`                | `boolean`  | `false`                          | Disable log output.                                                                       |
+| `serializer`            | `Function` | Metro default serializer         | Custom serializer to wrap.                                                                |
+
+<Callout type="warn">
+  With `includeCode: true` (the default) the report **contains your source code**.
+  If your code is proprietary, be careful who you share the report with.
+</Callout>
+
+
+# Introduction (/docs/getting-started/introduction)
+
+
 
 Visualize and analyze the JS bundle of your React Native app. Find heavy packages, duplicates and deprecated
 dependencies, inspect every module, and catch bundle size regressions in CI.
 
-![Bundle Discovery UI: Treemap, Insights and Packages tabs](/img/overview.jpg)
+<OverviewImage className="rounded-lg" />
 
-:::tip Try it in the browser
-Open the [live demo](https://retyui.github.io/bundle-discovery-demo/): a real report in compare mode, built with `react-native-bundle-discovery-ui build`.
-:::
+<Callout type="info" title="Try it in the browser">
+  Open the [live demo](https://retyui.github.io/bundle-discovery-demo/): a real report in compare mode, built with `react-native-bundle-discovery-ui build`.
+</Callout>
 
-## Features
+## Features [#features]
 
-- 📊 Interactive UI to explore packages, modules and their source/bundled code
-- 💡 Optimization recommendations ranked by estimated savings (duplicates, deprecated / outdated / dev-only packages, and more)
-- 🗺️ Treemap colored by package, file type or issues, and an "Imported by" graph for every module
-- ❓ "Why is this in my bundle?": the shortest import chain to any package
-- 🔍 CLI to list the heaviest packages and modules
-- 🆚 Compare two reports in the UI (with per-module code diffs) or in CI, and fail on bundle size regressions
-- 🧩 Works with Metro, [Re.Pack](/bundle-discovery/docs/guides/repack.md) and [React Native DevTools](/bundle-discovery/docs/guides/rozenite.md) (via Rozenite)
+* 📊 Interactive UI to explore packages, modules and their source/bundled code
+* 💡 Optimization recommendations ranked by estimated savings (duplicates, deprecated / outdated / dev-only packages, and more)
+* 🗺️ Treemap colored by package, file type or issues, and an "Imported by" graph for every module
+* ❓ "Why is this in my bundle?": the shortest import chain to any package
+* 🔍 CLI to list the heaviest packages and modules
+* 🆚 Compare two reports in the UI (with per-module code diffs) or in CI, and fail on bundle size regressions
+* 🧩 Works with Metro, [Re.Pack](/docs/guides/repack) and [React Native DevTools](/docs/guides/rozenite) (via Rozenite)
 
-## Packages
+## Packages [#packages]
 
 | Package                                         | What it does                                                                                    | Required |
 | ----------------------------------------------- | ----------------------------------------------------------------------------------------------- | -------- |
@@ -35,24 +92,31 @@ Open the [live demo](https://retyui.github.io/bundle-discovery-demo/): a real re
 | `react-native-bundle-discovery-rozenite-plugin` | Shows the UI inside [React Native DevTools](https://reactnative.dev/docs/react-native-devtools) | Optional |
 
 
+# Other setups (/docs/getting-started/other-setups)
 
----
-url: /bundle-discovery/docs/getting-started/quick-start.md
----
 
-> For AI agents: the complete documentation index is available at /bundle-discovery/llms.txt, the full documentation bundle is available at /bundle-discovery/llms-full.txt.
 
-# Quick start
+| Setup                           | Guide                                    |
+| ------------------------------- | ---------------------------------------- |
+| Re.Pack (Rspack / Webpack)      | [Re.Pack](/docs/guides/repack)           |
+| rnx-kit (esbuild, tree shaking) | [esbuild metafile](/docs/guides/rnx-kit) |
+| React Native DevTools           | [Rozenite plugin](/docs/guides/rozenite) |
+| AI coding agent                 | [Agent skill](/docs/guides/ai-agent)     |
+
+
+# Quick start (/docs/getting-started/quick-start)
+
+
 
 This setup is for a standard **Metro** project.
-Using Re.Pack or Rozenite? See [Other setups](/bundle-discovery/docs/getting-started/other-setups.md).
+Using Re.Pack or Rozenite? See [Other setups](/docs/getting-started/other-setups).
 
-:::tip Using an AI coding agent?
-Skip the manual steps below and point your agent at the
-[`setup-react-native-bundle-discovery`](/bundle-discovery/docs/guides/ai-agent.md) skill.
-:::
+<Callout type="info" title="Using an AI coding agent?">
+  Skip the manual steps below and point your agent at the
+  [`setup-react-native-bundle-discovery`](/docs/guides/ai-agent) skill.
+</Callout>
 
-## 1. Install
+## 1. Install [#1-install]
 
 ```bash
 yarn add -D react-native-bundle-discovery      # required: generates the report
@@ -60,7 +124,7 @@ yarn add -D react-native-bundle-discovery-ui   # optional: browser UI
 yarn add -D react-native-bundle-discovery-cli  # optional: CLI
 ```
 
-## 2. Configure Metro
+## 2. Configure Metro [#2-configure-metro]
 
 ```diff title="metro.config.js"
 const { getDefaultConfig, mergeConfig } = require('@react-native/metro-config');
@@ -78,9 +142,9 @@ const { getDefaultConfig, mergeConfig } = require('@react-native/metro-config');
 module.exports = mergeConfig(getDefaultConfig(__dirname), config);
 ```
 
-See all options in [`createSerializer`](/bundle-discovery/docs/api/create-serializer.md).
+See all options in [`createSerializer`](/docs/api/create-serializer).
 
-## 3. Build a release bundle
+## 3. Build a release bundle [#3-build-a-release-bundle]
 
 ```bash
 npx react-native bundle \
@@ -93,7 +157,7 @@ npx react-native bundle \
 
 This writes `metro-stats.json` to your project root.
 
-## 4. Explore the report
+## 4. Explore the report [#4-explore-the-report]
 
 ```bash
 npx react-native-bundle-discovery-ui metro-stats.json   # open in the browser
@@ -101,88 +165,61 @@ npx react-native-bundle-discovery-cli metro-stats.json  # get recommendations in
 ```
 
 
-
----
-url: /bundle-discovery/docs/getting-started/other-setups.md
----
-
-> For AI agents: the complete documentation index is available at /bundle-discovery/llms.txt, the full documentation bundle is available at /bundle-discovery/llms-full.txt.
-
-# Other setups
-
-| Setup                           | Guide                                                        |
-| ------------------------------- | ------------------------------------------------------------ |
-| Re.Pack (Rspack / Webpack)      | [Re.Pack](/bundle-discovery/docs/guides/repack.md)           |
-| rnx-kit (esbuild, tree shaking) | [esbuild metafile](/bundle-discovery/docs/guides/rnx-kit.md) |
-| React Native DevTools           | [Rozenite plugin](/bundle-discovery/docs/guides/rozenite.md) |
-| AI coding agent                 | [Agent skill](/bundle-discovery/docs/guides/ai-agent.md)     |
+# AI coding agent (/docs/guides/ai-agent)
 
 
 
----
-url: /bundle-discovery/docs/guides/ui.md
----
-
-> For AI agents: the complete documentation index is available at /bundle-discovery/llms.txt, the full documentation bundle is available at /bundle-discovery/llms-full.txt.
-
-# UI
-
-Requires `react-native-bundle-discovery-ui`.
+Using Claude Code, Cursor, Codex or another coding agent? Skip the manual setup and point your agent at the
+[`setup-react-native-bundle-discovery`](https://github.com/retyui/react-native-bundle-discovery/blob/main/skills/setup-react-native-bundle-discovery/SKILL.md) skill.
+It installs the package and sets up Metro or Re.Pack for you.
 
 ```bash
-# Start a local server (default port: 8079)
-npx react-native-bundle-discovery-ui metro-stats.json [--port <port>]
-
-# Build a static HTML report (default output: .bundle-discovery)
-npx react-native-bundle-discovery-ui build metro-stats.json [--output <path>]
-
-# Compare with a "before" report (works with both commands, adds the Compare tab)
-npx react-native-bundle-discovery-ui pr-stats.json --compare main-stats.json
+npx skills add retyui/react-native-bundle-discovery
 ```
 
-![Bundle Discovery UI: Treemap, Insights and Packages tabs](/img/overview.jpg)
+The skill configures the bundler so the report is generated only when the `BUNDLE_ANALYZER` environment variable is set.
 
-See it in action in the [live demo](https://retyui.github.io/bundle-discovery-demo/) (a static build with `--compare`).
 
-The top bar shows the platform, whether the bundle is a production/minified build (warns about dev or
-unminified bundles), the total size split into your code and `node_modules`, and the report build date.
-
-## Tabs
-
-| Tab        | What it shows                                                                                                                                                               |
-| ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Insights   | Summary cards, heaviest packages and own modules, and the [CLI](/bundle-discovery/docs/guides/cli.md) recommendations ranked by estimated savings (production reports only) |
-| Treemap    | Bundle treemap, colored by package, file type or issues (duplicates / removable code)                                                                                       |
-| Packages   | All packages with total size of the filtered list, sortable by size, name or duplicates                                                                                     |
-| Modules    | All modules with total size of the filtered list, sortable by size, name or duplicates                                                                                      |
-| Duplicates | Duplicate packages and modules with possible savings                                                                                                                        |
-| Compare    | Only with `--compare`: size, module/package count changes, new duplicates and deprecated packages, version changes, added/removed/changed modules                           |
-
-## Pages
-
-- **Package page**: versions, status and recommendation chips, bundle share and rank, copies with possible
-  savings, and tabs for files, importers, the shortest import chain ("Why is this in my bundle?") and versions.
-- **Module page**: package/version and status chips, size share and rank, transform delta, an "Imported by"
-  graph (zoom/pan, click to open a module), imports, and source/bundled code. In compare mode, the **Diff** tab
-  shows source and output changes against the "before" report.
-
-The Compare tab uses the same comparison as [`cli compare`](/bundle-discovery/docs/guides/cli.md).
+# Bundle size checks in CI (/docs/guides/ci)
 
 
 
----
-url: /bundle-discovery/docs/guides/cli.md
----
+`compare` exits with code `1` when any check fails:
 
-> For AI agents: the complete documentation index is available at /bundle-discovery/llms.txt, the full documentation bundle is available at /bundle-discovery/llms-full.txt.
+| Option               | Fails when                                                    | Example                         |
+| -------------------- | ------------------------------------------------------------- | ------------------------------- |
+| `--fail-on-increase` | The bundle grows more than the limit (bytes or % of "before") | `50KB`, `0.5MB`, `51200`, `5%`  |
+| `--max-size`         | The "after" bundle is bigger than the limit                   | `3MB`                           |
+| `--fail-on`          | New duplicate and/or deprecated packages appear               | `new-duplicates,new-deprecated` |
 
-# CLI
+```bash
+npx react-native-bundle-discovery-cli compare --before main-stats.json --after pr-stats.json \
+  --fail-on-increase 50KB \
+  --max-size 3MB \
+  --fail-on new-duplicates,new-deprecated
+```
+
+## GitHub Actions [#github-actions]
+
+Works out of the box: the markdown report is added to the job summary and failed checks
+are shown as error annotations.
+
+```yaml
+- run: npx react-native-bundle-discovery-cli compare --before main-stats.json --after pr-stats.json --fail-on-increase 5%
+```
+
+To post the report as a PR comment, use `--format markdown`.
+
+
+# CLI (/docs/guides/cli)
+
+
 
 Requires `react-native-bundle-discovery-cli`. Run any command with `--help` to see all options.
 
 | Command    | Description                                   |
 | ---------- | --------------------------------------------- |
-| _(none)_   | Show recommended optimizations for the bundle |
+| *(none)*   | Show recommended optimizations for the bundle |
 | `packages` | List all packages in the bundle               |
 | `modules`  | List the heaviest modules                     |
 | `compare`  | Compare two reports                           |
@@ -204,64 +241,23 @@ npx react-native-bundle-discovery-cli modules metro-stats.json [--limit 50] [--f
 npx react-native-bundle-discovery-cli compare --before main-stats.json --after pr-stats.json [--limit 50] [--format json|markdown|default]
 ```
 
-To fail CI on bundle size regressions, see [Bundle size checks in CI](/bundle-discovery/docs/guides/ci.md).
+To fail CI on bundle size regressions, see [Bundle size checks in CI](/docs/guides/ci).
 
 
-
----
-url: /bundle-discovery/docs/guides/ci.md
----
-
-> For AI agents: the complete documentation index is available at /bundle-discovery/llms.txt, the full documentation bundle is available at /bundle-discovery/llms-full.txt.
-
-# Bundle size checks in CI
-
-`compare` exits with code `1` when any check fails:
-
-| Option               | Fails when                                                    | Example                         |
-| -------------------- | ------------------------------------------------------------- | ------------------------------- |
-| `--fail-on-increase` | The bundle grows more than the limit (bytes or % of "before") | `50KB`, `0.5MB`, `51200`, `5%`  |
-| `--max-size`         | The "after" bundle is bigger than the limit                   | `3MB`                           |
-| `--fail-on`          | New duplicate and/or deprecated packages appear               | `new-duplicates,new-deprecated` |
-
-```bash
-npx react-native-bundle-discovery-cli compare --before main-stats.json --after pr-stats.json \
-  --fail-on-increase 50KB \
-  --max-size 3MB \
-  --fail-on new-duplicates,new-deprecated
-```
-
-## GitHub Actions
-
-Works out of the box: the markdown report is added to the job summary and failed checks
-are shown as error annotations.
-
-```yaml
-- run: npx react-native-bundle-discovery-cli compare --before main-stats.json --after pr-stats.json --fail-on-increase 5%
-```
-
-To post the report as a PR comment, use `--format markdown`.
+# Re.Pack (/docs/guides/repack)
 
 
-
----
-url: /bundle-discovery/docs/guides/repack.md
----
-
-> For AI agents: the complete documentation index is available at /bundle-discovery/llms.txt, the full documentation bundle is available at /bundle-discovery/llms-full.txt.
-
-# Re.Pack
 
 For projects using [Re.Pack](https://re-pack.dev/docs/guides/bundle-analysis) there are two ways to use `react-native-bundle-discovery`:
 
 1. As the [`BundleDiscoveryPlugin`](https://github.com/retyui/react-native-bundle-discovery/blob/main/packages/serializer/src/webpack.ts) Webpack/Rspack plugin
 2. Or with a JSON report from [Rsdoctor](https://rsdoctor.rs/)
 
-:::tip
-Using an AI coding agent? Point it at the [`setup-react-native-bundle-discovery`](/bundle-discovery/docs/guides/ai-agent.md) skill to install `react-native-bundle-discovery` automatically.
-:::
+<Callout type="info">
+  Using an AI coding agent? Point it at the [`setup-react-native-bundle-discovery`](/docs/guides/ai-agent) skill to install `react-native-bundle-discovery` automatically.
+</Callout>
 
-## Rspack/Webpack plugin
+## Rspack/Webpack plugin [#rspackwebpack-plugin]
 
 `BundleDiscoveryPlugin` creates a `metro-stats.json` file that `react-native-bundle-discovery` uses to analyze your JS bundle.
 
@@ -306,7 +302,7 @@ npx react-native-bundle-discovery-ui metro-stats.json   # UI
 npx react-native-bundle-discovery-cli metro-stats.json  # CLI
 ```
 
-## JSON report from Rsdoctor
+## JSON report from Rsdoctor [#json-report-from-rsdoctor]
 
 If you use [Rsdoctor](https://rsdoctor.rs/), generate a JSON report that `react-native-bundle-discovery` can read.
 
@@ -359,23 +355,18 @@ npx react-native-bundle-discovery-ui rsdoctor-data.json   # UI
 npx react-native-bundle-discovery-cli rsdoctor-data.json  # CLI
 ```
 
-:::warning Known limitations
-`rsdoctor-data.json` does not include the source code or bundled output code.
-:::
+<Callout type="warn" title="Known limitations">
+  `rsdoctor-data.json` does not include the source code or bundled output code.
+</Callout>
 
-## Alternative tools
+## Alternative tools [#alternative-tools]
 
-- [Re.Pack bundle analysis guide](https://re-pack.dev/docs/guides/bundle-analysis)
+* [Re.Pack bundle analysis guide](https://re-pack.dev/docs/guides/bundle-analysis)
 
 
+# rnx-kit (esbuild metafile) (/docs/guides/rnx-kit)
 
----
-url: /bundle-discovery/docs/guides/rnx-kit.md
----
 
-> For AI agents: the complete documentation index is available at /bundle-discovery/llms.txt, the full documentation bundle is available at /bundle-discovery/llms-full.txt.
-
-# rnx-kit (esbuild metafile)
 
 With [`@rnx-kit/metro-serializer-esbuild`](https://github.com/microsoft/rnx-kit/tree/main/packages/metro-serializer-esbuild) (tree shaking), ask it to write an [esbuild metafile](https://esbuild.github.io/api/#metafile) via the `treeShake` options in `package.json`:
 
@@ -400,25 +391,22 @@ npx react-native-bundle-discovery-ui esbuild-meta.json
 npx react-native-bundle-discovery-cli esbuild-meta.json
 ```
 
-:::info Notes
-The metafile does not include source/output code, and its paths are relative to the directory the bundle was built from (the metafile folder, its parents and the current directory are tried).
-:::
+<Callout type="info" title="Notes">
+  The metafile does not include source/output code, and its paths are relative to the directory the bundle was built from (the metafile folder, its parents and the current directory are tried).
+</Callout>
+
+
+# React Native DevTools (Rozenite) (/docs/guides/rozenite)
 
 
 
----
-url: /bundle-discovery/docs/guides/rozenite.md
----
 
-> For AI agents: the complete documentation index is available at /bundle-discovery/llms.txt, the full documentation bundle is available at /bundle-discovery/llms-full.txt.
-
-# React Native DevTools (Rozenite)
 
 Use the UI inside [React Native DevTools](https://reactnative.dev/docs/react-native-devtools). The plugin is built on top of [Rozenite](https://www.rozenite.dev/).
 
-![Rozenite plugin](/img/rozenite.png)
+<img alt="Rozenite plugin" src="__img0" />
 
-## Install
+## Install [#install]
 
 ```bash
 yarn dlx rozenite@latest init # init rozenite in your project (https://www.rozenite.dev/docs/getting-started)
@@ -446,143 +434,68 @@ module.exports = withRozenite(
 Now run `yarn start` and open [React Native DevTools](https://reactnative.dev/docs/react-native-devtools).
 
 
+# UI (/docs/guides/ui)
 
----
-url: /bundle-discovery/docs/guides/ai-agent.md
----
 
-> For AI agents: the complete documentation index is available at /bundle-discovery/llms.txt, the full documentation bundle is available at /bundle-discovery/llms-full.txt.
 
-# AI coding agent
-
-Using Claude Code, Cursor, Codex or another coding agent? Skip the manual setup and point your agent at the
-[`setup-react-native-bundle-discovery`](https://github.com/retyui/react-native-bundle-discovery/blob/main/skills/setup-react-native-bundle-discovery/SKILL.md) skill.
-It installs the package and sets up Metro or Re.Pack for you.
+Requires `react-native-bundle-discovery-ui`.
 
 ```bash
-npx skills add retyui/react-native-bundle-discovery
+# Start a local server (default port: 8079)
+npx react-native-bundle-discovery-ui metro-stats.json [--port <port>]
+
+# Build a static HTML report (default output: .bundle-discovery)
+npx react-native-bundle-discovery-ui build metro-stats.json [--output <path>]
+
+# Compare with a "before" report (works with both commands, adds the Compare tab)
+npx react-native-bundle-discovery-ui pr-stats.json --compare main-stats.json
 ```
 
-The skill configures the bundler so the report is generated only when the `BUNDLE_ANALYZER` environment variable is set.
+<OverviewImage className="rounded-lg" />
+
+See it in action in the [live demo](https://retyui.github.io/bundle-discovery-demo/) (a static build with `--compare`).
+
+The top bar shows the platform, whether the bundle is a production/minified build (warns about dev or
+unminified bundles), the total size split into your code and `node_modules`, and the report build date.
+
+## Tabs [#tabs]
+
+| Tab        | What it shows                                                                                                                                           |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Insights   | Summary cards, heaviest packages and own modules, and the [CLI](/docs/guides/cli) recommendations ranked by estimated savings (production reports only) |
+| Treemap    | Bundle treemap, colored by package, file type or issues (duplicates / removable code)                                                                   |
+| Packages   | All packages with total size of the filtered list, sortable by size, name or duplicates                                                                 |
+| Modules    | All modules with total size of the filtered list, sortable by size, name or duplicates                                                                  |
+| Duplicates | Duplicate packages and modules with possible savings                                                                                                    |
+| Compare    | Only with `--compare`: size, module/package count changes, new duplicates and deprecated packages, version changes, added/removed/changed modules       |
+
+## Pages [#pages]
+
+* **Package page**: versions, status and recommendation chips, bundle share and rank, copies with possible
+  savings, and tabs for files, importers, the shortest import chain ("Why is this in my bundle?") and versions.
+* **Module page**: package/version and status chips, size share and rank, transform delta, an "Imported by"
+  graph (zoom/pan, click to open a module), imports, and source/bundled code. In compare mode, the **Diff** tab
+  shows source and output changes against the "before" report.
+
+The Compare tab uses the same comparison as [`cli compare`](/docs/guides/cli).
+
+
+# Similar projects (/docs/similar-projects)
 
 
 
----
-url: /bundle-discovery/docs/api/create-serializer.md
----
-
-> For AI agents: the complete documentation index is available at /bundle-discovery/llms.txt, the full documentation bundle is available at /bundle-discovery/llms-full.txt.
-
-# createSerializer
-
-```ts
-import { createSerializer } from "react-native-bundle-discovery";
-```
-
-Creates a Metro serializer that writes the JSON report. Use it as `serializer.customSerializer` (see [Quick start](/bundle-discovery/docs/getting-started/quick-start.md#2-configure-metro)).
-
-## Options
-
-| Option                  | Type       | Default                          | Description                                                                               |
-| ----------------------- | ---------- | -------------------------------- | ----------------------------------------------------------------------------------------- |
-| `projectRoot`           | `string`   | **Required**                     | Project root. ⚠️ In a monorepo, use the monorepo root, not the app package directory.     |
-| `outputJsonPath`        | `string`   | `<projectRoot>/metro-stats.json` | Where to save the report.                                                                 |
-| `includeCode`           | `boolean`  | `true`                           | Include source and bundled code of each module in the report (larger file).               |
-| `includeEnvs`           | `string[]` | `[]`                             | Names of environment variables to include in the report.                                  |
-| `fetchPackagesMetadata` | `boolean`  | `true`                           | Fetch package metadata (publish date, deprecation, latest version) from the npm registry. |
-| `silent`                | `boolean`  | `false`                          | Disable log output.                                                                       |
-| `serializer`            | `Function` | Metro default serializer         | Custom serializer to wrap.                                                                |
-
-:::warning
-With `includeCode: true` (the default) the report **contains your source code**.
-If your code is proprietary, be careful who you share the report with.
-:::
-
-
-
----
-url: /bundle-discovery/docs/api/create-resolve-request.md
----
-
-> For AI agents: the complete documentation index is available at /bundle-discovery/llms.txt, the full documentation bundle is available at /bundle-discovery/llms-full.txt.
-
-# createResolveRequest
-
-```ts
-import { createResolveRequest } from "react-native-bundle-discovery";
-```
-
-Creates a Metro `resolveRequest` that removes unnecessary React Native modules from **release** bundles
-(dev builds are not affected). The CLI recommends these options when they apply to your bundle.
-
-## Options
-
-| Option              | Type      | Default | Description                                                                      |
-| ------------------- | --------- | ------- | -------------------------------------------------------------------------------- |
-| `removeUTFSequence` | `boolean` | `false` | Remove the unused `react-native/Libraries/UTFSequence.js` module.                |
-| `removeNewRenderer` | `boolean` | `false` | Remove the Fabric renderer. Enable only if the New Architecture is **disabled**. |
-
-## Example
-
-```js title="metro.config.js"
-const { createResolveRequest } = require("react-native-bundle-discovery");
-
-const config = {
-  resolver: {
-    resolveRequest: createResolveRequest({
-      removeUTFSequence: true,
-    }),
-  },
-};
-```
-
-
-
----
-url: /bundle-discovery/docs/similar-projects.md
----
-
-> For AI agents: the complete documentation index is available at /bundle-discovery/llms.txt, the full documentation bundle is available at /bundle-discovery/llms-full.txt.
-
-# Similar projects
-
-- [expo-atlas](https://github.com/expo/atlas)
-- [expo-atlas-without-expo](https://github.com/v3ron/expo-atlas-without-expo)
-- [react-native-bundle-visualizer](https://github.com/callstack/react-native-bundle-visualizer)
-- [webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer)
-- [bundle-stats](https://github.com/relative-ci/bundle-stats/tree/master/packages/cli#readme)
-- [statoscope](https://github.com/statoscope/statoscope)
+* [expo-atlas](https://github.com/expo/atlas)
+* [expo-atlas-without-expo](https://github.com/v3ron/expo-atlas-without-expo)
+* [react-native-bundle-visualizer](https://github.com/callstack/react-native-bundle-visualizer)
+* [webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer)
+* [bundle-stats](https://github.com/relative-ci/bundle-stats/tree/master/packages/cli#readme)
+* [statoscope](https://github.com/statoscope/statoscope)
 
 Built with [Discovery.js](https://github.com/discoveryjs/discovery)
 ([views showcase](https://discoveryjs.github.io/discovery/#views-showcase),
 [Jora syntax](https://discoveryjs.github.io/jora/#article:jora-syntax-operators)).
 
-## Support the project
+## Support the project [#support-the-project]
 
 Become a financial contributor on [OpenCollective](https://opencollective.com/react-native-bundle-discovery)
 or [GitHub Sponsors](https://github.com/sponsors/retyui).
-
-
-
----
-url: /bundle-discovery/index.md
----
-
-> For AI agents: the complete documentation index is available at /bundle-discovery/llms.txt, the full documentation bundle is available at /bundle-discovery/llms-full.txt.
-
-# React Native Bundle Discovery
-
-> Visualize and analyze the JS bundle of your React Native app. Find heavy packages, duplicates and deprecated dependencies, and catch bundle size regressions in CI.
-
-[Quick Start](/docs/getting-started/quick-start) | [Live demo](https://retyui.github.io/bundle-discovery-demo/) | [GitHub](https://github.com/retyui/react-native-bundle-discovery)
-
-## Features
-
-- 📊 **Interactive UI**: Explore packages, modules and their source/bundled code in the browser, with a treemap and an "Imported by" graph for every module.
-- 💡 **Optimization recommendations**: Duplicates, deprecated, outdated and dev-only packages and more, ranked by estimated savings.
-- ❓ **Why is this in my bundle?**: See the shortest import chain to any package in your bundle.
-- 🔍 **CLI**: List the heaviest packages and modules right in your terminal.
-- 🆚 **Bundle size checks in CI**: Compare two reports in the UI or in CI and fail on bundle size regressions.
-- 🧩 **Works with your setup**: Metro, Re.Pack (Rspack / Webpack), rnx-kit (esbuild) and React Native DevTools via Rozenite.
-
-

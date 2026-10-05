@@ -1,19 +1,18 @@
-# React Native Bundle Discovery
+# Docs
 
-> Visualize and analyze the JS bundle of your React Native app
-
-## Docs
-
-- [Introduction](/bundle-discovery/docs/getting-started/introduction.md): Visualize and analyze the JS bundle of your React Native app. Find heavy packages, duplicates and deprecated dependencies, inspect every module, and catch bundle size regressions in CI.
-- [Quick start](/bundle-discovery/docs/getting-started/quick-start.md): This setup is for a standard Metro project. Using Re.Pack or Rozenite? See Other setups.
-- [Other setups](/bundle-discovery/docs/getting-started/other-setups.md)
-- [UI](/bundle-discovery/docs/guides/ui.md): Requires react-native-bundle-discovery-ui. See it in action in the live demo (a static build with --compare). The top bar shows the platform, whether the bundle is a production/minified build (warns about dev or unminified bundles), the total size split into your code and node_modules, and the report build date.
-- [CLI](/bundle-discovery/docs/guides/cli.md): Requires react-native-bundle-discovery-cli. Run any command with --help to see all options. To fail CI on bundle size regressions, see Bundle size checks in CI.
-- [Bundle size checks in CI](/bundle-discovery/docs/guides/ci.md): compare exits with code 1 when any check fails:
-- [Re.Pack](/bundle-discovery/docs/guides/repack.md): For projects using Re.Pack there are two ways to use react-native-bundle-discovery: As the BundleDiscoveryPlugin Webpack/Rspack pluginOr with a JSON report from Rsdoctor
-- [rnx-kit (esbuild metafile)](/bundle-discovery/docs/guides/rnx-kit.md): With @rnx-kit/metro-serializer-esbuild (tree shaking), ask it to write an esbuild metafile via the treeShake options in package.json: Then create a production bundle with react-native rnx-bundle --platform ios --dev false (the path to the metafile is printed in the build log). The UI and CLI accept the metafile as is (sizes are after tree shaking and minification):
-- [React Native DevTools (Rozenite)](/bundle-discovery/docs/guides/rozenite.md): Use the UI inside React Native DevTools. The plugin is built on top of Rozenite.
-- [AI coding agent](/bundle-discovery/docs/guides/ai-agent.md): Using Claude Code, Cursor, Codex or another coding agent? Skip the manual setup and point your agent at the setup-react-native-bundle-discovery skill. It installs the package and sets up Metro or Re.Pack for you. The skill configures the bundler so the report is generated only when the BUNDLE_ANALYZER environment variable is set.
-- [createSerializer](/bundle-discovery/docs/api/create-serializer.md): Creates a Metro serializer that writes the JSON report. Use it as serializer.customSerializer (see Quick start).
-- [createResolveRequest](/bundle-discovery/docs/api/create-resolve-request.md): Creates a Metro resolveRequest that removes unnecessary React Native modules from release bundles (dev builds are not affected). The CLI recommends these options when they apply to your bundle.
-- [Similar projects](/bundle-discovery/docs/similar-projects.md): expo-atlasexpo-atlas-without-exporeact-native-bundle-visualizerwebpack-bundle-analyzerbundle-statsstatoscope Built with Discovery.js (views showcase, Jora syntax).
+- Getting Started
+  - [Introduction](/docs/getting-started/introduction)
+  - [Quick start](/docs/getting-started/quick-start)
+  - [Other setups](/docs/getting-started/other-setups)
+- Guides
+  - [UI](/docs/guides/ui)
+  - [CLI](/docs/guides/cli)
+  - [Bundle size checks in CI](/docs/guides/ci)
+  - [Re.Pack](/docs/guides/repack)
+  - [rnx-kit (esbuild metafile)](/docs/guides/rnx-kit)
+  - [React Native DevTools (Rozenite)](/docs/guides/rozenite)
+  - [AI coding agent](/docs/guides/ai-agent)
+- API
+  - [createSerializer](/docs/api/create-serializer)
+  - [createResolveRequest](/docs/api/create-resolve-request)
+- [Similar projects](/docs/similar-projects)
