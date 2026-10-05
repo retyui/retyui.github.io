@@ -2,7 +2,7 @@
 
 
 
-[`createSerializer`](/docs/api/create-serializer) (Metro) and [`BundleDiscoveryPlugin`](/docs/guides/repack) (Re.Pack) write the report as a single JSON file, `metro-stats.json` by default. The [UI](/docs/guides/ui) and [CLI](/docs/guides/cli) read it.
+[`createSerializer`](/docs/api/create-serializer) (Metro), [`BundleDiscoveryPlugin`](/docs/guides/repack) (Re.Pack) and [`bundleDiscoveryRollipopPlugin`](/docs/guides/rollipop) (Rollipop) write the report as a single JSON file, `metro-stats.json` by default. The [UI](/docs/guides/ui) and [CLI](/docs/guides/cli) read it.
 
 <Callout type="info">
   The UI and CLI also accept an [Rsdoctor](/docs/guides/repack#json-report-from-rsdoctor) report and an [esbuild metafile](/docs/guides/rnx-kit) as is. Those files have their own formats and are not described here.
@@ -52,6 +52,7 @@
 
 | Field              | Type                                    | Description                                                                                    |
 | ------------------ | --------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `kind`             | `string?`                               | Bundler that created the report: `metro`, `webpack` (Re.Pack) or `rollipop`.                   |
 | `date`             | `number`                                | When the report was created (Unix time in milliseconds).                                       |
 | `entryPoint`       | `string`                                | Absolute path to the bundle entry file.                                                        |
 | `rootFolder`       | `string`                                | Project root (`projectRoot` option). The UI shows module paths relative to it.                 |

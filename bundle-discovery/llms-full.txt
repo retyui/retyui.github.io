@@ -69,7 +69,7 @@ Creates a Metro serializer that writes the JSON report ([format](/docs/api/repor
 
 
 
-[`createSerializer`](/docs/api/create-serializer) (Metro) and [`BundleDiscoveryPlugin`](/docs/guides/repack) (Re.Pack) write the report as a single JSON file, `metro-stats.json` by default. The [UI](/docs/guides/ui) and [CLI](/docs/guides/cli) read it.
+[`createSerializer`](/docs/api/create-serializer) (Metro), [`BundleDiscoveryPlugin`](/docs/guides/repack) (Re.Pack) and [`bundleDiscoveryRollipopPlugin`](/docs/guides/rollipop) (Rollipop) write the report as a single JSON file, `metro-stats.json` by default. The [UI](/docs/guides/ui) and [CLI](/docs/guides/cli) read it.
 
 <Callout type="info">
   The UI and CLI also accept an [Rsdoctor](/docs/guides/repack#json-report-from-rsdoctor) report and an [esbuild metafile](/docs/guides/rnx-kit) as is. Those files have their own formats and are not described here.
@@ -119,6 +119,7 @@ Creates a Metro serializer that writes the JSON report ([format](/docs/api/repor
 
 | Field              | Type                                    | Description                                                                                    |
 | ------------------ | --------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `kind`             | `string?`                               | Bundler that created the report: `metro`, `webpack` (Re.Pack) or `rollipop`.                   |
 | `date`             | `number`                                | When the report was created (Unix time in milliseconds).                                       |
 | `entryPoint`       | `string`                                | Absolute path to the bundle entry file.                                                        |
 | `rootFolder`       | `string`                                | Project root (`projectRoot` option). The UI shows module paths relative to it.                 |
@@ -212,7 +213,7 @@ dependencies, inspect every module, and catch bundle size regressions in CI.
 * ❓ "Why is this in my bundle?": the shortest import chain to any package
 * 🔍 CLI to list the heaviest packages and modules
 * 🆚 Compare two reports in the UI (with per-module code diffs) or in CI, and fail on bundle size regressions
-* 🧩 Works with Metro, [Re.Pack](/docs/guides/repack) and [React Native DevTools](/docs/guides/rozenite) (via Rozenite)
+* 🧩 Works with Metro, [Re.Pack](/docs/guides/repack), [Rollipop](/docs/guides/rollipop) and [React Native DevTools](/docs/guides/rozenite) (via Rozenite)
 
 ## Packages [#packages]
 
@@ -232,6 +233,7 @@ dependencies, inspect every module, and catch bundle size regressions in CI.
 | ------------------------------- | ---------------------------------------- |
 | Expo                            | [Expo](/docs/guides/expo)                |
 | Re.Pack (Rspack / Webpack)      | [Re.Pack](/docs/guides/repack)           |
+| Rollipop (Rolldown)             | [Rollipop](/docs/guides/rollipop)        |
 | rnx-kit (esbuild, tree shaking) | [esbuild metafile](/docs/guides/rnx-kit) |
 | React Native DevTools           | [Rozenite plugin](/docs/guides/rozenite) |
 | AI coding agent                 | [Agent skill](/docs/guides/ai-agent)     |
@@ -242,7 +244,7 @@ dependencies, inspect every module, and catch bundle size regressions in CI.
 
 
 This setup is for a standard **Metro** project.
-Using Expo, Re.Pack or Rozenite? See [Other setups](/docs/getting-started/other-setups).
+Using Expo, Re.Pack, Rollipop or Rozenite? See [Other setups](/docs/getting-started/other-setups).
 
 <Callout type="info" title="Using an AI coding agent?">
   Skip the manual steps below and point your agent at the
@@ -734,6 +736,64 @@ npx react-native-bundle-discovery-cli esbuild-meta.json
 
 <Callout type="info" title="Notes">
   The metafile does not include source/output code, and its paths are relative to the directory the bundle was built from (the metafile folder, its parents and the current directory are tried).
+</Callout>
+
+
+# Rollipop (/docs/guides/rollipop)
+
+
+
+For projects bundled with [Rollipop](https://rollipop.dev/) (Rolldown) instead of Metro, use the `bundleDiscoveryRollipopPlugin` plugin.
+It creates a `metro-stats.json` file ([format](/docs/api/report-format)) that `react-native-bundle-discovery` uses to analyze your JS bundle.
+
+1. Install the package:
+
+```bash
+yarn add -D react-native-bundle-discovery
+```
+
+2. Register the plugin in `rollipop.config.ts`:
+
+```ts title="rollipop.config.ts"
+import { bundleDiscoveryRollipopPlugin } from 'react-native-bundle-discovery';
+import { defineConfig } from 'rollipop';
+
+export default defineConfig({
+  plugins: [
+    bundleDiscoveryRollipopPlugin({
+      // Default options, you can customize them if needed
+      filename: 'metro-stats.json', // resolved against the Rollipop `root`
+      includeCode: true,
+      fetchPackagesMetadata: true,
+      enabled: !!process.env.BUNDLE_ANALYZER,
+    }),
+  ],
+});
+```
+
+3. Build a minified release bundle with the `BUNDLE_ANALYZER` environment variable
+   (Rollipop doesn't minify release bundles by default):
+
+```bash
+BUNDLE_ANALYZER=1 npx react-native bundle \
+  --entry-file index.js \
+  --platform ios \
+  --dev false \
+  --minify true \
+  --bundle-output ios/main.jsbundle \
+  --assets-dest ios/assets
+```
+
+4. After the build, `metro-stats.json` is in the root of your project. Analyze it:
+
+```bash
+npx react-native-bundle-discovery-ui metro-stats.json   # UI
+npx react-native-bundle-discovery-cli metro-stats.json  # CLI
+```
+
+<Callout type="info" title="Notes">
+  Rolldown minifies the bundle as a whole, so the plugin minifies every module on its own to show its output code and size.
+  Module sizes are close to, but slightly larger than, their share of the real bundle.
 </Callout>
 
 
