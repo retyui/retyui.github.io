@@ -8,6 +8,7 @@
   - [UI](/docs/guides/ui)
   - [CLI](/docs/guides/cli): Analyze and compare bundle reports in the terminal or CI.
   - [Bundle size checks in CI](/docs/guides/ci)
+  - [Expo](/docs/guides/expo)
   - [Re.Pack](/docs/guides/repack)
   - [rnx-kit (esbuild metafile)](/docs/guides/rnx-kit)
   - [React Native DevTools (Rozenite)](/docs/guides/rozenite)
